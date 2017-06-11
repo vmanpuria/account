@@ -32,10 +32,12 @@ bool SettlementReport::addItemFromOrder(string &sku, int qty, float itemPrice, f
         orderSkuMap[sku] += orderSkuInfo;
     }
 
+    printf("sku: %s qty: %d price: %f tax: %f itemFees: %f \n", sku.c_str(), qty, itemPrice, itemTax, itemFees);
+    countInfo.orderCount++;
     return true;
 }
 
-bool SettlementReport::addItemFromRefund(string &sku, float itemPrice, float itemTax, float itemFees)
+bool SettlementReport::addItemFromRefund(string &sku, float itemPrice, float itemTax, float itemFees, float itemPromotion)
 {
     RefundSkuInfo refundSkuInfo;
     map<string, RefundSkuInfo>::iterator iter;
@@ -43,6 +45,7 @@ bool SettlementReport::addItemFromRefund(string &sku, float itemPrice, float ite
     refundSkuInfo.price = itemPrice;
     refundSkuInfo.tax = itemTax;
     refundSkuInfo.fee = itemFees;
+    refundSkuInfo.promotion = itemPromotion;
 
     iter = refundSkuMap.find(sku);
     if (iter == refundSkuMap.end())
@@ -54,6 +57,8 @@ bool SettlementReport::addItemFromRefund(string &sku, float itemPrice, float ite
         refundSkuMap[sku] += refundSkuInfo;
     }
 
+    printf("refund: sku: %s price: %f tax: %f itemFees: %f itemPromotion: %f\n", sku.c_str(), itemPrice, itemTax, itemFees, itemPromotion);
+    countInfo.refundCount++;
     return true;
 }
 
@@ -186,7 +191,7 @@ bool SettlementReport::findAndParseFulfillmentInRefund(xmlNodePtr refund)
         return false;
     }
 
-    result = findAndParseAdjustedItem(cur);
+    result = parseFulfillment(cur);
 
     if (!result)
     {
@@ -262,103 +267,174 @@ bool SettlementReport::parseItemFeeAdjustments(xmlNodePtr itemFeeAdjustments, fl
     return true;
 }
 
-bool SettlementReport::findAndParseAdjustedItem(xmlNodePtr fulfillment)
+bool SettlementReport::parseItemPromotionAdjustment(xmlNodePtr itemPromotionAdjustment, float &itemPromotion)
 {
-    xmlNodePtr cur;
     bool result;
-    bool skuFlag = false, priceFlag = false, feeFlag = false;
-    string itemSku;
-    float itemPrice, itemTax, itemFees;
+    float promotion;
+    string amountType;
 
-    if (!fulfillment)
+    if (!itemPromotionAdjustment)
     {
-        fprintf(stderr, "Null pointer. No fulfillment node. Cannot find and parse adjusted item.\n");
+        fprintf(stderr, "Null pointer. No itemPromotionAdjustment node. Cannot parse.\n");
         return false;
     }
 
-    cur = findNodeInChildren(fulfillment, (const xmlChar *)"AdjustedItem");
+    result = findAndParseAmountAndType(itemPromotionAdjustment, promotion, amountType);
 
-    if (!cur)
+    if (!result)
+    {
+        fprintf(stderr, "failed to find and parse amount and type in itemPromotionAdjustment\n");
+        return false;
+    }
+
+    itemPromotion = promotion;
+    return true;
+}
+
+bool SettlementReport::parseFulfillment(xmlNodePtr fulfillment)
+{
+    xmlNodePtr cur;
+    bool itemFlag = false;
+    bool result;
+
+    if (!fulfillment)
+    {
+        fprintf(stderr, "Null pointer. No fulfillment node. Cannot find and parse adjusted item array.\n");
+        return false;
+    }
+
+    cur = fulfillment->xmlChildrenNode;
+    while (cur)
+    {
+        if ((!xmlStrcmp(cur->name, (const xmlChar *)"AdjustedItem")))
+        {
+            itemFlag = true;
+            result = parseAdjustedItem(cur);
+
+            if (!result)
+            {
+                fprintf(stderr, "failed to parse node [AdjustedItem] in fulfillment.\n");
+                return false;
+            }
+        }
+
+        cur = xmlNextElementSibling(cur);
+    }
+
+    if (!itemFlag)
     {
         fprintf(stderr,"failed to find node [AdjustedItem] in fulfillment.\n");
         return false;
     }
 
-    cur = cur->xmlChildrenNode;
+    return true; 
+}
+
+bool SettlementReport::parseAdjustedItem(xmlNodePtr adjustedItem)
+{
+    xmlNodePtr cur;
+    bool result;
+    bool skuFlag = false, priceFlag = false, feeFlag = false, promotionFlag = false;
+    string itemSku;
+    float itemPrice, itemTax, itemFees, itemPromotion;
+
+    if (!adjustedItem)
+    {
+        fprintf(stderr, "Null pointer. No ajustedItem node. Cannot parse.\n");
+        return false;
+    }
+
+    cur = adjustedItem->xmlChildrenNode;
     while (cur)
     {
         if ((!xmlStrcmp(cur->name, (const xmlChar *)"SKU")))
         {
             if (skuFlag)
             {
-                fprintf(stderr, "found another node [SKU] in node [AdjustedItem]. Unexpected\n");
+                fprintf(stderr, "found another node [SKU] in adjustedItem. Unexpected\n");
                 return false;
             }
 
             skuFlag = true;
             itemSku = parseString(cur);
-            printf("sku: %s\n", itemSku.c_str());
         }
         else if ((!xmlStrcmp(cur->name, (const xmlChar *)"ItemPriceAdjustments")))
         {
             if (priceFlag)
             {
-                fprintf(stderr, "found another node [ItemPriceAdjustments] in node [AdjustedItem]. Unexpected\n");
+                fprintf(stderr, "found another node [ItemPriceAdjustments] in adjustedItem. Unexpected\n");
                 return false;
             }
 
-            printf("##### found ItemPriceAdjustments\n");
             priceFlag = true;
             result = parseItemPriceAdjustments(cur, itemPrice, itemTax);
 
             if (!result)
             {
-                fprintf(stderr, "failed to parse item price adjustments in node [AdjustedItem].\n");
+                fprintf(stderr, "failed to parse item price adjustments in adjustedItem.\n");
                 return false;
             }
-            printf("price: %f tax: %f\n", itemPrice, itemTax);
         }
         else if ((!xmlStrcmp(cur->name, (const xmlChar *)"ItemFeeAdjustments")))
         {
             if (feeFlag)
             {
-                fprintf(stderr, "found another node [ItemFeeAdjustments] in node [AdjustedItem]. Unexpected\n");
+                fprintf(stderr, "found another node [ItemFeeAdjustments] in adjustedItem. Unexpected\n");
                 return false;
             }
 
-            printf("##### found ItemFeeAdjustments\n");
             feeFlag = true;
             result = parseItemFeeAdjustments(cur, itemFees);
             if (!result)
             {
-                fprintf(stderr, "failed to parse item fee adjustments in node [AdjustedItem].\n");
+                fprintf(stderr, "failed to parse item fee adjustments in adjustedItem.\n");
                 return false;
             }
-            printf("itemFees: %f \n", itemFees);
+        }
+        else if ((!xmlStrcmp(cur->name, (const xmlChar *)"PromotionAdjustment")))
+        {
+            if (promotionFlag)
+            {
+                fprintf(stderr, "found another node [PromotionAdjustment] in adjustedItem. Unexpected\n");
+                return false;
+            }
+
+            promotionFlag = true;
+            result = parseItemPromotionAdjustment(cur, itemPromotion);
+            if (!result)
+            {
+                fprintf(stderr, "failed to parse item promotion adjustment in adjustedItem.\n");
+                return false;
+            }
         }
         cur = xmlNextElementSibling(cur);
     }
 
     if (!skuFlag)
     {
-        fprintf(stderr, "failed to find node [SKU] in node [AdjustedItem].\n");
+        fprintf(stderr, "failed to find node [SKU] in adjustedItem.\n");
         return false;
     }
 
     if (!priceFlag)
     {
-        fprintf(stderr, "failed to find node [ItemPriceAdjustments] in node [AdjustedItem].\n");
+        fprintf(stderr, "failed to find node [ItemPriceAdjustments] in adjustedItem.\n");
         return false;
     }
 
     //ItemFeeAdjustments is optional
     if (!feeFlag)
     {
-        fprintf(stderr, "failed to find node [ItemFeeAdjustments] in node [AdjustedItem].\n");
         itemFees = 0.0;
     }
 
-    result = addItemFromRefund(itemSku, itemPrice, itemTax, itemFees);
+    //ItemPromotionAdjustment is optional
+    if (!promotionFlag)
+    {
+        itemPromotion = 0.0;
+    }
+
+    result = addItemFromRefund(itemSku, itemPrice, itemTax, itemFees, itemPromotion);
 
     if (!result)
     {
@@ -844,7 +920,6 @@ bool SettlementReport::parseItemArray(xmlNodePtr item)
         }
 
         item = xmlNextElementSibling(item);
-        printf("sku: %s qty: %d price: %f tax: %f itemFees: %f \n", sku.c_str(), qty, itemPrice, itemTax, itemFees);
     }
 
     return true;
@@ -892,12 +967,12 @@ void SettlementReport::dumpItemsFromRefunds()
         return;
     }
     
-    cout << "SKU" << '\t' << "Item Refund" << '\t' << "Fee Refund" << '\t' << "Refund(Item+Fee)" << '\t' << "Tax Refund" << endl;
+    cout << "SKU" << '\t' << "Item Refund" << '\t' << "Fee Refund" << '\t' << "Promotion" << '\t' << "Refund(Item+Fee+Promotion)" << '\t' << "Tax Refund" << endl;
     for(iter = refundSkuMap.begin(); iter != refundSkuMap.end(); iter++)
     {
         refundSkuInfo = iter->second;
-        refund = refundSkuInfo.price + refundSkuInfo.fee;
-        cout << iter->first << '\t' << refundSkuInfo.price << '\t' << refundSkuInfo.fee << '\t' << refund << '\t' << refundSkuInfo.tax << endl;
+        refund = refundSkuInfo.price + refundSkuInfo.fee + refundSkuInfo.promotion;
+        cout << iter->first << '\t' << refundSkuInfo.price << '\t' << refundSkuInfo.fee << '\t' << refundSkuInfo.promotion << '\t' << refund << '\t' << refundSkuInfo.tax << endl;
 
         totalRefund += refund;
         totalTaxRefund += refundSkuInfo.tax;
@@ -907,11 +982,22 @@ void SettlementReport::dumpItemsFromRefunds()
     cout << "Total Tax Refund: " << totalTaxRefund << endl;
 }
 
-SettlementReport::SettlementReport(string docName) : doc(NULL)
+void SettlementReport::dumpCount()
+{
+    cout << "Total orders placed: " << countInfo.orderCount << endl;
+    cout << "Total refunds: " << countInfo.refundCount << endl;
+}
+ 
+SettlementReport::SettlementReport(string docName) : 
+    doc(NULL),
+    orderSkuMap(),
+    refundSkuMap(),
+    countInfo()
 {
     doc = xmlParseFile(docName.c_str());
 
-    if (doc == NULL) {
+    if (doc == NULL)
+    {
         fprintf(stderr,"Document not parsed successfully. \n");
         return;
     }
@@ -1197,5 +1283,7 @@ int main(int argc, char **argv)
     report.dumpItemsFromOrders();
     printf("\n");
     report.dumpItemsFromRefunds();
+    printf("\n");
+    report.dumpCount();
     return 0;
 }

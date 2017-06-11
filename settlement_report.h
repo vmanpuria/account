@@ -3,6 +3,15 @@
 #include <string>
 using namespace std;
 
+class CountInfo
+{
+    public:
+        int orderCount;
+        int refundCount;
+
+        CountInfo() : orderCount(0), refundCount(0) { }
+};
+
 class OrderSkuInfo
 {
     public:
@@ -29,14 +38,16 @@ class RefundSkuInfo
     public:
         float price;
         float fee;
+        float promotion;
         float tax;
 
-        RefundSkuInfo() : price(0.0), fee(0.0), tax(0.0) { }
+        RefundSkuInfo() : price(0.0), fee(0.0), promotion(0.0), tax(0.0) { }
 
         void operator+=(RefundSkuInfo &refundSkuInfo)
         {
             price += refundSkuInfo.price;
             fee += refundSkuInfo.fee;
+            promotion += refundSkuInfo.promotion;
             tax += refundSkuInfo.tax;
         }
 };
@@ -47,6 +58,7 @@ class SettlementReport
         xmlDocPtr doc; 
         map<string, OrderSkuInfo> orderSkuMap;
         map<string, RefundSkuInfo> refundSkuMap;
+        CountInfo countInfo;
 
         string parseString(xmlNodePtr cur);
         float parseFloat(xmlNodePtr cur);
@@ -77,15 +89,17 @@ class SettlementReport
         bool parseFeeArray(xmlNodePtr fee, float &fees);
 
         bool addItemFromOrder(string &sku, int qty, float itemPrice, float itemTax, float itemFees, float itemPromotion);
-        bool addItemFromRefund(string &sku, float itemPrice, float itemTax, float itemFees);
+        bool addItemFromRefund(string &sku, float itemPrice, float itemTax, float itemFees, float itemPromotion);
 
         bool findCheckAndParseRefundArray(xmlNodePtr settlementReport);
         bool checkAndParseRefundArray(xmlNodePtr refund);
         bool parseRefund(xmlNodePtr refund);
         bool findAndParseFulfillmentInRefund(xmlNodePtr refund);
-        bool findAndParseAdjustedItem(xmlNodePtr fulfillment);
+        bool parseFulfillment(xmlNodePtr fulfillment);
+        bool parseAdjustedItem(xmlNodePtr adjustedItem);
         bool parseItemPriceAdjustments(xmlNodePtr itemPriceAdjustments, float &itemPrice, float &itemTax);
         bool parseItemFeeAdjustments(xmlNodePtr itemFeeAdjustments, float &itemFees);
+        bool parseItemPromotionAdjustment(xmlNodePtr itemPromotionAdjustment, float &itemPromotion);
 
     public:
         SettlementReport(std::string docName);
@@ -94,5 +108,6 @@ class SettlementReport
         bool findAndParseAmazonEnvelope();
         void dumpItemsFromOrders();
         void dumpItemsFromRefunds();
+        void dumpCount();
 };
 #endif //__SETTLEMENT_REPORT_H__
