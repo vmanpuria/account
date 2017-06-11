@@ -1,7 +1,7 @@
 #ifndef __SETTLEMENT_REPORT_H__
 #define __SETTLEMENT_REPORT_H__
-#include <string>
-using namespace std;
+
+#include "xml_doc.h"
 
 class Summary
 {
@@ -86,17 +86,17 @@ class RefundSkuInfo
         }
 };
 
-class SettlementReport
+class SettlementReport : public XmlDoc
 {
     private:
-        xmlDocPtr doc; 
+        //xmlDocPtr doc; 
         map<string, OrderSkuInfo> orderSkuMap;
         map<string, RefundSkuInfo> refundSkuMap;
         Summary summary;
 
-        string parseString(xmlNodePtr cur);
-        float parseFloat(xmlNodePtr cur);
-        int parseInt(xmlNodePtr cur);
+        //string parseString(xmlNodePtr cur);
+        //float parseFloat(xmlNodePtr cur);
+        //int parseInt(xmlNodePtr cur);
 
         xmlNodePtr findNodeInChildren(xmlNodePtr cur, const xmlChar *key, bool optionalFlag = false);
 

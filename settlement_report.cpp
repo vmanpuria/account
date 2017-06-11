@@ -101,40 +101,6 @@ xmlNodePtr SettlementReport::findNodeInChildren(xmlNodePtr cur, const xmlChar *k
     return cur;
 }
 
-string SettlementReport::parseString(xmlNodePtr cur)
-{
-    xmlChar *key;
-	string str;
-
-    key = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
-    str = (const char *)key;
-    xmlFree(key);
-
-    return str;
-}
-
-float SettlementReport::parseFloat(xmlNodePtr cur)
-{
-	float val;
-    string str;
-
-    str = parseString(cur);
-    val = atof(str.c_str());
-
-    return val;
-}
-
-int SettlementReport::parseInt(xmlNodePtr cur)
-{
-    int val;
-    string str;
-
-    str = parseString(cur);
-    val = atoi(str.c_str());
-
-    return val;
-}
-
 bool SettlementReport::parseSettlementData(xmlNodePtr settlementData)
 {
     xmlNodePtr cur;
@@ -1072,28 +1038,15 @@ void SettlementReport::dumpSummary()
     summary.dump();
 }
  
-SettlementReport::SettlementReport(string docName) : 
-    doc(NULL),
+SettlementReport::SettlementReport(string docName) : XmlDoc(docName),
     orderSkuMap(),
     refundSkuMap(),
     summary()
 {
-    doc = xmlParseFile(docName.c_str());
-
-    if (doc == NULL)
-    {
-        fprintf(stderr,"Document not parsed successfully. \n");
-        return;
-    }
 }
 
 SettlementReport::~SettlementReport()
 {
-    if (doc)
-    {
-        xmlFreeDoc(doc);
-        doc = NULL;
-    }
 }
 
 bool SettlementReport::findAndParseAmazonEnvelope()
@@ -1102,17 +1055,11 @@ bool SettlementReport::findAndParseAmazonEnvelope()
     xmlNodePtr cur;
     string messageType;
 
-    if (!doc)
-    {
-        fprintf(stderr, "No document. failed to find and parse settlement report\n");
-        return false;
-    }
-
-    cur = xmlDocGetRootElement(doc);
+    cur = getRootElement();
 
     if (!cur)
     {
-        fprintf(stderr, "empty document\n");
+        fprintf(stderr, "failed to get root element. empty document or no/invalid document\n");
         return false;
     }
 
