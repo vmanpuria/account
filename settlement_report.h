@@ -3,13 +3,47 @@
 #include <string>
 using namespace std;
 
-class CountInfo
+class Summary
 {
     public:
+        // Order
         int orderCount;
-        int refundCount;
+        int orderSkuCount;
+        float orderAmount;
+        float orderTaxAmount;
 
-        CountInfo() : orderCount(0), refundCount(0) { }
+        // Refund
+        int refundCount;
+        float refundAmount;
+        float refundTaxAmount;
+
+        // Other
+        int otherCount;
+        float otherAmount;
+
+        // Settlement
+        float totalAmount;
+        string startDate;
+        string endDate;
+
+        Summary() : orderCount(0), orderSkuCount(0), orderAmount(0.0), orderTaxAmount(0.0),
+                    refundCount(0), refundAmount(0.0), refundTaxAmount(0.0),
+                    otherCount(0), otherAmount(0.0), 
+                    totalAmount(0.0), startDate(), endDate() { }
+		
+		void dump()
+        {
+            float total = orderAmount + orderTaxAmount + refundAmount + refundTaxAmount + otherAmount; 
+            float diff = totalAmount - total;
+
+            cout << "Order: orders: " << orderCount << " items: " << orderSkuCount << " amount: " << orderAmount << " tax: " << orderTaxAmount << endl;
+            cout << "Refund: refunds: " << refundCount << " amount: " << refundAmount << " tax: " << refundTaxAmount << endl;
+            cout << "Other: others: " << otherCount << " amount: " << otherAmount << endl;
+            cout << "Settlement: amount: " << totalAmount << " start: " << startDate << " end: " << endDate << endl;
+            cout << "Total (Order + Refund + Other): amount: " << total << " diff: " << diff << endl;
+
+            cout << endl;
+        }
 };
 
 class OrderSkuInfo
@@ -58,7 +92,7 @@ class SettlementReport
         xmlDocPtr doc; 
         map<string, OrderSkuInfo> orderSkuMap;
         map<string, RefundSkuInfo> refundSkuMap;
-        CountInfo countInfo;
+        Summary summary;
 
         string parseString(xmlNodePtr cur);
         float parseFloat(xmlNodePtr cur);
@@ -69,8 +103,8 @@ class SettlementReport
         bool findAndParseMessageType(xmlNodePtr amazonEnvelope, string &messageType);
         bool findAndParseMessage(xmlNodePtr amazonEnvelope);
         bool findAndParseSettlementReport(xmlNodePtr message);
-        bool findCheckAndParseOrderArray(xmlNodePtr settlementReport);
-        bool checkAndParseOrderArray(xmlNodePtr order);
+        bool parseSettlementReport(xmlNodePtr settlementReport);
+        bool parseSettlementData(xmlNodePtr settlementData);
         bool parseOrder(xmlNodePtr order);
         bool findAndParseFulfillment(xmlNodePtr order);
         bool findAndParseItemArray(xmlNodePtr fulfillment);
@@ -91,8 +125,6 @@ class SettlementReport
         bool addItemFromOrder(string &sku, int qty, float itemPrice, float itemTax, float itemFees, float itemPromotion);
         bool addItemFromRefund(string &sku, float itemPrice, float itemTax, float itemFees, float itemPromotion);
 
-        bool findCheckAndParseRefundArray(xmlNodePtr settlementReport);
-        bool checkAndParseRefundArray(xmlNodePtr refund);
         bool parseRefund(xmlNodePtr refund);
         bool findAndParseFulfillmentInRefund(xmlNodePtr refund);
         bool parseFulfillment(xmlNodePtr fulfillment);
@@ -100,6 +132,7 @@ class SettlementReport
         bool parseItemPriceAdjustments(xmlNodePtr itemPriceAdjustments, float &itemPrice, float &itemTax);
         bool parseItemFeeAdjustments(xmlNodePtr itemFeeAdjustments, float &itemFees);
         bool parseItemPromotionAdjustment(xmlNodePtr itemPromotionAdjustment, float &itemPromotion);
+        bool parseOtherTransaction(xmlNodePtr otherTransaction);
 
     public:
         SettlementReport(std::string docName);
@@ -108,6 +141,6 @@ class SettlementReport
         bool findAndParseAmazonEnvelope();
         void dumpItemsFromOrders();
         void dumpItemsFromRefunds();
-        void dumpCount();
+        void dumpSummary();
 };
 #endif //__SETTLEMENT_REPORT_H__
