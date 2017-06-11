@@ -3,21 +3,41 @@
 #include <string>
 using namespace std;
 
-class OrderedSkuInfo {
+class OrderSkuInfo
+{
     public:
         int qty;
         float price;
         float fee;
         float promotion;
+        float tax;
 
-        OrderedSkuInfo() : qty(0), price(0.0), fee(0.0), promotion(0.0) { }
+        OrderSkuInfo() : qty(0), price(0.0), fee(0.0), promotion(0.0), tax(0.0) { }
 
-        void operator+=(OrderedSkuInfo &orderedSkuInfo)
+        void operator+=(OrderSkuInfo &orderSkuInfo)
         {
-            qty += orderedSkuInfo.qty;
-            price += orderedSkuInfo.price;
-            fee += orderedSkuInfo.fee;
-            promotion += orderedSkuInfo.promotion;
+            qty += orderSkuInfo.qty;
+            price += orderSkuInfo.price;
+            fee += orderSkuInfo.fee;
+            promotion += orderSkuInfo.promotion;
+            tax += orderSkuInfo.tax;
+        }
+};
+
+class RefundSkuInfo
+{
+    public:
+        float price;
+        float fee;
+        float tax;
+
+        RefundSkuInfo() : price(0.0), fee(0.0), tax(0.0) { }
+
+        void operator+=(RefundSkuInfo &refundSkuInfo)
+        {
+            price += refundSkuInfo.price;
+            fee += refundSkuInfo.fee;
+            tax += refundSkuInfo.tax;
         }
 };
 
@@ -25,11 +45,12 @@ class SettlementReport
 {
     private:
         xmlDocPtr doc; 
-        map<string, OrderedSkuInfo> orderedSkus;
+        map<string, OrderSkuInfo> orderSkuMap;
+        map<string, RefundSkuInfo> refundSkuMap;
 
-        string parseString(xmlDocPtr doc, xmlNodePtr cur);
-        float parseFloat(xmlDocPtr doc, xmlNodePtr cur);
-        int parseInt(xmlDocPtr doc, xmlNodePtr cur);
+        string parseString(xmlNodePtr cur);
+        float parseFloat(xmlNodePtr cur);
+        int parseInt(xmlNodePtr cur);
 
         xmlNodePtr findNodeInChildren(xmlNodePtr cur, const xmlChar *key, bool optionalFlag = false);
 
@@ -44,17 +65,27 @@ class SettlementReport
         bool parseItemArray(xmlNodePtr item);
         bool findAndParseSku(xmlNodePtr item, string &sku);
         bool findAndParseQuantity(xmlNodePtr item, int &quantity);
-        bool findAndParseItemPrice(xmlNodePtr item, float &itemPrice);
+        bool findAndParseItemPrice(xmlNodePtr item, float &itemPrice, float &itemTax);
         bool findAndParseItemFees(xmlNodePtr item, float &itemFees);
         bool findAndParsePromotion(xmlNodePtr item, float &itemPromotion);
 
-        bool findAndParseComponentArray(xmlNodePtr itemPrice, float &price);
-        bool parseComponentArray(xmlNodePtr component, float &itemPrice);
-        bool findAndParseAmount(xmlNodePtr amountParent, float &amount);
+        bool findAndParseComponentArray(xmlNodePtr itemPrice, float &price, float &tax);
+        bool parseComponentArray(xmlNodePtr component, float &itemPrice, float &itemTax);
+        bool parseComponent(xmlNodePtr component, float &amount, bool &taxFlag);
+        bool findAndParseAmountAndType(xmlNodePtr amountParent, float &amount, string &amountType);
         bool findAndParseFeeArray(xmlNodePtr itemFees, float &fees);
         bool parseFeeArray(xmlNodePtr fee, float &fees);
 
-        bool addItemFromOrder(string &sku, int qty, float itemPrice, float itemFees, float itemPromotion);
+        bool addItemFromOrder(string &sku, int qty, float itemPrice, float itemTax, float itemFees, float itemPromotion);
+        bool addItemFromRefund(string &sku, float itemPrice, float itemTax, float itemFees);
+
+        bool findCheckAndParseRefundArray(xmlNodePtr settlementReport);
+        bool checkAndParseRefundArray(xmlNodePtr refund);
+        bool parseRefund(xmlNodePtr refund);
+        bool findAndParseFulfillmentInRefund(xmlNodePtr refund);
+        bool findAndParseAdjustedItem(xmlNodePtr fulfillment);
+        bool parseItemPriceAdjustments(xmlNodePtr itemPriceAdjustments, float &itemPrice, float &itemTax);
+        bool parseItemFeeAdjustments(xmlNodePtr itemFeeAdjustments, float &itemFees);
 
     public:
         SettlementReport(std::string docName);
@@ -62,5 +93,6 @@ class SettlementReport
 
         bool findAndParseAmazonEnvelope();
         void dumpItemsFromOrders();
+        void dumpItemsFromRefunds();
 };
 #endif //__SETTLEMENT_REPORT_H__

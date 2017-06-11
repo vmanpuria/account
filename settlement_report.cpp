@@ -11,24 +11,47 @@
 #include "settlement_report.h"
 
 // TODO: check for failure to add to map
-bool SettlementReport::addItemFromOrder(string &sku, int qty, float itemPrice, float itemFees, float itemPromotion)
+bool SettlementReport::addItemFromOrder(string &sku, int qty, float itemPrice, float itemTax, float itemFees, float itemPromotion)
 {
-    OrderedSkuInfo orderedSkuInfo;
-    map<string, OrderedSkuInfo>::iterator iter;
+    OrderSkuInfo orderSkuInfo;
+    map<string, OrderSkuInfo>::iterator iter;
 
-    orderedSkuInfo.qty = qty;
-    orderedSkuInfo.price = itemPrice;
-    orderedSkuInfo.fee = itemFees;
-    orderedSkuInfo.promotion = itemPromotion;
+    orderSkuInfo.qty = qty;
+    orderSkuInfo.price = itemPrice;
+    orderSkuInfo.tax = itemTax;
+    orderSkuInfo.fee = itemFees;
+    orderSkuInfo.promotion = itemPromotion;
 
-    iter = orderedSkus.find(sku);
-    if (iter == orderedSkus.end())
+    iter = orderSkuMap.find(sku);
+    if (iter == orderSkuMap.end())
     {
-        orderedSkus[sku] = orderedSkuInfo;
+        orderSkuMap[sku] = orderSkuInfo;
     }
     else
     {
-        orderedSkus[sku] += orderedSkuInfo;
+        orderSkuMap[sku] += orderSkuInfo;
+    }
+
+    return true;
+}
+
+bool SettlementReport::addItemFromRefund(string &sku, float itemPrice, float itemTax, float itemFees)
+{
+    RefundSkuInfo refundSkuInfo;
+    map<string, RefundSkuInfo>::iterator iter;
+
+    refundSkuInfo.price = itemPrice;
+    refundSkuInfo.tax = itemTax;
+    refundSkuInfo.fee = itemFees;
+
+    iter = refundSkuMap.find(sku);
+    if (iter == refundSkuMap.end())
+    {
+        refundSkuMap[sku] = refundSkuInfo;
+    }
+    else
+    {
+        refundSkuMap[sku] += refundSkuInfo;
     }
 
     return true;
@@ -68,7 +91,7 @@ xmlNodePtr SettlementReport::findNodeInChildren(xmlNodePtr cur, const xmlChar *k
     return cur;
 }
 
-string SettlementReport::parseString(xmlDocPtr doc, xmlNodePtr cur)
+string SettlementReport::parseString(xmlNodePtr cur)
 {
     xmlChar *key;
 	string str;
@@ -80,26 +103,47 @@ string SettlementReport::parseString(xmlDocPtr doc, xmlNodePtr cur)
     return str;
 }
 
-float SettlementReport::parseFloat(xmlDocPtr doc, xmlNodePtr cur)
+float SettlementReport::parseFloat(xmlNodePtr cur)
 {
 	float val;
     string str;
 
-    str = parseString(doc, cur);
+    str = parseString(cur);
     val = atof(str.c_str());
 
     return val;
 }
 
-int SettlementReport::parseInt(xmlDocPtr doc, xmlNodePtr cur)
+int SettlementReport::parseInt(xmlNodePtr cur)
 {
     int val;
     string str;
 
-    str = parseString(doc, cur);
+    str = parseString(cur);
     val = atoi(str.c_str());
 
     return val;
+}
+
+bool SettlementReport::parseRefund(xmlNodePtr refund)
+{
+    bool result;
+
+    if (!refund)
+    {
+        fprintf(stderr, "Null pointer. No refund node. Cannot refund order.\n");
+        return false;
+    }
+
+    result = findAndParseFulfillmentInRefund(refund);
+
+    if (!result)
+    {
+        fprintf(stderr, "failed to find and parse fulfillment in order.\n");
+        return false;
+    }
+
+    return true;
 }
 
 bool SettlementReport::parseOrder(xmlNodePtr order)
@@ -117,6 +161,208 @@ bool SettlementReport::parseOrder(xmlNodePtr order)
     if (!result)
     {
         fprintf(stderr, "failed to find and parse fulfillment in order.\n");
+        return false;
+    }
+
+    return true;
+}
+
+bool SettlementReport::findAndParseFulfillmentInRefund(xmlNodePtr refund)
+{
+    xmlNodePtr cur;
+    bool result;
+
+    if (!refund)
+    {
+        fprintf(stderr, "Null pointer. No refund node. Cannot find and parse fulfillment.\n");
+        return false;
+    }
+
+    cur = findNodeInChildren(refund, (const xmlChar *)"Fulfillment");
+
+    if (!cur)
+    {
+        fprintf(stderr,"failed to find node [Fulfillment] in refund.\n");
+        return false;
+    }
+
+    result = findAndParseAdjustedItem(cur);
+
+    if (!result)
+    {
+        fprintf(stderr, "failed to find and parse adjusted item in fulfillment.\n");
+        return false;
+    }
+
+    return true;
+}
+
+bool SettlementReport::parseItemPriceAdjustments(xmlNodePtr itemPriceAdjustments, float &itemPrice, float &itemTax)
+{
+    xmlNodePtr cur;
+    bool result;
+    float price, tax;
+
+    if (!itemPriceAdjustments)
+    {
+        fprintf(stderr, "Null pointer. No itemPriceAdjustments node. Cannot parse.\n");
+        return false;
+    }
+
+    cur = findNodeInChildren(itemPriceAdjustments, (const xmlChar *)"Component");
+
+    if (!cur)
+    {
+        fprintf(stderr,"failed to find node [Component] in itemPriceAdjustments.\n");
+        return false;
+    }
+
+    result = parseComponentArray(cur, price, tax);
+
+    if (!result)
+    {
+        fprintf(stderr, "failed to parse component array in itemPriceAdjustments\n");
+        return false;
+    }
+
+    itemPrice = price;
+    itemTax = tax;
+    return true;
+}
+
+bool SettlementReport::parseItemFeeAdjustments(xmlNodePtr itemFeeAdjustments, float &itemFees)
+{
+    xmlNodePtr cur;
+    bool result;
+    float fees;
+
+    if (!itemFeeAdjustments)
+    {
+        fprintf(stderr, "Null pointer. No itemFeeAdjustments node. Cannot parse.\n");
+        return false;
+    }
+
+    cur = findNodeInChildren(itemFeeAdjustments, (const xmlChar *)"Fee");
+
+    if (!cur)
+    {
+        fprintf(stderr,"failed to find node [Fee] in itemFeeAdjustments.\n");
+        return false;
+    }
+
+    result = parseFeeArray(cur, fees);
+
+    if (!result)
+    {
+        fprintf(stderr, "failed to parse fee array in itemFeeAdjustments\n");
+        return false;
+    }
+
+    itemFees = fees;
+    return true;
+}
+
+bool SettlementReport::findAndParseAdjustedItem(xmlNodePtr fulfillment)
+{
+    xmlNodePtr cur;
+    bool result;
+    bool skuFlag = false, priceFlag = false, feeFlag = false;
+    string itemSku;
+    float itemPrice, itemTax, itemFees;
+
+    if (!fulfillment)
+    {
+        fprintf(stderr, "Null pointer. No fulfillment node. Cannot find and parse adjusted item.\n");
+        return false;
+    }
+
+    cur = findNodeInChildren(fulfillment, (const xmlChar *)"AdjustedItem");
+
+    if (!cur)
+    {
+        fprintf(stderr,"failed to find node [AdjustedItem] in fulfillment.\n");
+        return false;
+    }
+
+    cur = cur->xmlChildrenNode;
+    while (cur)
+    {
+        if ((!xmlStrcmp(cur->name, (const xmlChar *)"SKU")))
+        {
+            if (skuFlag)
+            {
+                fprintf(stderr, "found another node [SKU] in node [AdjustedItem]. Unexpected\n");
+                return false;
+            }
+
+            skuFlag = true;
+            itemSku = parseString(cur);
+            printf("sku: %s\n", itemSku.c_str());
+        }
+        else if ((!xmlStrcmp(cur->name, (const xmlChar *)"ItemPriceAdjustments")))
+        {
+            if (priceFlag)
+            {
+                fprintf(stderr, "found another node [ItemPriceAdjustments] in node [AdjustedItem]. Unexpected\n");
+                return false;
+            }
+
+            printf("##### found ItemPriceAdjustments\n");
+            priceFlag = true;
+            result = parseItemPriceAdjustments(cur, itemPrice, itemTax);
+
+            if (!result)
+            {
+                fprintf(stderr, "failed to parse item price adjustments in node [AdjustedItem].\n");
+                return false;
+            }
+            printf("price: %f tax: %f\n", itemPrice, itemTax);
+        }
+        else if ((!xmlStrcmp(cur->name, (const xmlChar *)"ItemFeeAdjustments")))
+        {
+            if (feeFlag)
+            {
+                fprintf(stderr, "found another node [ItemFeeAdjustments] in node [AdjustedItem]. Unexpected\n");
+                return false;
+            }
+
+            printf("##### found ItemFeeAdjustments\n");
+            feeFlag = true;
+            result = parseItemFeeAdjustments(cur, itemFees);
+            if (!result)
+            {
+                fprintf(stderr, "failed to parse item fee adjustments in node [AdjustedItem].\n");
+                return false;
+            }
+            printf("itemFees: %f \n", itemFees);
+        }
+        cur = xmlNextElementSibling(cur);
+    }
+
+    if (!skuFlag)
+    {
+        fprintf(stderr, "failed to find node [SKU] in node [AdjustedItem].\n");
+        return false;
+    }
+
+    if (!priceFlag)
+    {
+        fprintf(stderr, "failed to find node [ItemPriceAdjustments] in node [AdjustedItem].\n");
+        return false;
+    }
+
+    //ItemFeeAdjustments is optional
+    if (!feeFlag)
+    {
+        fprintf(stderr, "failed to find node [ItemFeeAdjustments] in node [AdjustedItem].\n");
+        itemFees = 0.0;
+    }
+
+    result = addItemFromRefund(itemSku, itemPrice, itemTax, itemFees);
+
+    if (!result)
+    {
+        fprintf(stderr, "failed to add refund to map.\n");
         return false;
     }
 
@@ -187,6 +433,7 @@ bool SettlementReport::parseFeeArray(xmlNodePtr fee, float &fees)
 {
     bool result;
     float amount;
+    string amountType;
 
     if (!fee)
     {
@@ -197,7 +444,7 @@ bool SettlementReport::parseFeeArray(xmlNodePtr fee, float &fees)
     fees = 0.0;
     while (fee)
     {
-        result = findAndParseAmount(fee, amount);
+        result = findAndParseAmountAndType(fee, amount, amountType);
 
         if (!result)
         {
@@ -212,7 +459,7 @@ bool SettlementReport::parseFeeArray(xmlNodePtr fee, float &fees)
     return true;
 }
 
-bool SettlementReport::findAndParseItemPrice(xmlNodePtr item, float &itemPrice)
+bool SettlementReport::findAndParseItemPrice(xmlNodePtr item, float &itemPrice, float &itemTax)
 {
     xmlNodePtr cur;
     bool result;
@@ -230,7 +477,7 @@ bool SettlementReport::findAndParseItemPrice(xmlNodePtr item, float &itemPrice)
         return false;
     }
 
-    result = findAndParseComponentArray(cur, itemPrice);
+    result = findAndParseComponentArray(cur, itemPrice, itemTax);
 
     if (!result)
     {
@@ -241,7 +488,7 @@ bool SettlementReport::findAndParseItemPrice(xmlNodePtr item, float &itemPrice)
     return true;
 }
 
-bool SettlementReport::findAndParseComponentArray(xmlNodePtr itemPrice, float &price)
+bool SettlementReport::findAndParseComponentArray(xmlNodePtr itemPrice, float &price, float &tax)
 {
     xmlNodePtr cur;
     bool result;
@@ -260,7 +507,7 @@ bool SettlementReport::findAndParseComponentArray(xmlNodePtr itemPrice, float &p
         return false;
     }
 
-    result = parseComponentArray(cur, price);
+    result = parseComponentArray(cur, price, tax);
     if (!result)
     {
         fprintf(stderr, "failed to parse component array in itemPrice.\n");
@@ -270,10 +517,11 @@ bool SettlementReport::findAndParseComponentArray(xmlNodePtr itemPrice, float &p
     return true;
 }
 
-bool SettlementReport::parseComponentArray(xmlNodePtr component, float &itemPrice)
+bool SettlementReport::parseComponentArray(xmlNodePtr component, float &itemPrice, float &itemTax)
 {
     bool result;
-    float amount;
+    float amount, price, tax;
+    bool taxFlag;
 
     if (!component)
     {
@@ -281,41 +529,116 @@ bool SettlementReport::parseComponentArray(xmlNodePtr component, float &itemPric
         return false;
     }
 
-    itemPrice = 0.0;
+    price = 0.0;
+    tax = 0.0;
     while (component)
     {
-        result = findAndParseAmount(component, amount);
+        result = parseComponent(component, amount, taxFlag);
         if (!result)
         {
-            fprintf(stderr, "failed to find and parse amount in component.\n");
+            fprintf(stderr, "failed to parse component in component array.\n");
             return false;
         }
 
-        itemPrice += amount;
+        if (taxFlag)
+        {
+            tax += amount;
+        }
+        else
+        {
+            price += amount;
+        }
+
         component = xmlNextElementSibling(component);
+    }
+
+    itemPrice = price;
+    itemTax = tax;
+    return true;
+}
+
+bool SettlementReport::parseComponent(xmlNodePtr component, float &amount, bool &taxFlag)
+{
+    bool result;
+    string amountType;
+
+    if (!component)
+    {
+        fprintf(stderr, "Null pointer. No component node. Cannot parse component array.\n");
+        return false;
+    }
+
+    result = findAndParseAmountAndType(component, amount, amountType);
+
+    if (!result)
+    {
+        fprintf(stderr, "failed to parse amount and type from component.\n");
+        return false;
+    }
+
+    taxFlag = false;
+    if (!amountType.compare("Tax"))
+    {
+        taxFlag = true;
     }
 
     return true;
 }
 
-bool SettlementReport::findAndParseAmount(xmlNodePtr amountParent, float &amount)
+bool SettlementReport::findAndParseAmountAndType(xmlNodePtr amountParent, float &amount, string &amountType)
 {
     xmlNodePtr cur;
+    string type;
+    float amt;
+    bool typeFlag = false, amtFlag = false;
 
     if (!amountParent)
     {
-        fprintf(stderr, "Null pointer. No parent node for amount. Cannot find and parse amount.\n");
+        fprintf(stderr, "Null pointer. No parent node for amount. Cannot find and parse amount and type.\n");
         return false;
     }
 
-    cur =  findNodeInChildren(amountParent, (const xmlChar *)"Amount");
-    if (!cur)
+    // key
+    cur = amountParent->xmlChildrenNode;
+    while (cur != NULL)
     {
-        fprintf(stderr,"cannot find node [Amount] in parent.\n");
+        if ((!xmlStrcmp(cur->name, (const xmlChar *)"Type")))
+        {
+            if (typeFlag)
+            {
+                fprintf(stderr, "Found another [Type] node. Not expected.\n");
+                return false;
+            }
+            type = parseString(cur);
+            typeFlag = true;
+        }
+        else if ((!xmlStrcmp(cur->name, (const xmlChar *)"Amount")))
+        {
+            if (amtFlag)
+            {
+                fprintf(stderr, "Found another [Amount] node. Not expected.\n");
+                return false;
+            }
+            amt = parseFloat(cur);
+            amtFlag = true;
+        }
+        cur = xmlNextElementSibling(cur);
+    }
+
+    if (!amtFlag)
+    {
+        fprintf(stderr, "node [Amount] not found in amountParent.\n");
         return false;
     }
 
-    amount = parseFloat(doc, cur);
+    if (!typeFlag)
+    {
+        fprintf(stderr, "node [Type] not found in amountParent.\n");
+        return false;
+    }
+
+    amountType = type;
+    amount = amt;
     return true;
 }
 
@@ -384,6 +707,7 @@ bool SettlementReport::findAndParsePromotion(xmlNodePtr item, float &itemPromoti
     xmlNodePtr cur;
     bool result;
     float amount;
+    string amountType;
 
     if (!item)
     {
@@ -399,7 +723,7 @@ bool SettlementReport::findAndParsePromotion(xmlNodePtr item, float &itemPromoti
         return true;
     }
 
-    result = findAndParseAmount(cur, amount);
+    result = findAndParseAmountAndType(cur, amount, amountType);
 
     if (!result)
     {
@@ -428,7 +752,7 @@ bool SettlementReport::findAndParseSku(xmlNodePtr item, string &sku)
         return false;
     }
 
-    sku = parseString(doc, cur);
+    sku = parseString(cur);
     return true;
 }
  
@@ -449,7 +773,7 @@ bool SettlementReport::findAndParseQuantity(xmlNodePtr item, int &quantity)
         return false;
     }
 
-    quantity = parseInt(doc, cur);
+    quantity = parseInt(cur);
     return true;
 }
 
@@ -460,7 +784,7 @@ bool SettlementReport::parseItemArray(xmlNodePtr item)
 
     string sku;
     int qty;
-    float itemPrice, itemFees, itemPromotion;
+    float itemPrice, itemTax, itemFees, itemPromotion;
 
     if (!item)
     {
@@ -487,7 +811,7 @@ bool SettlementReport::parseItemArray(xmlNodePtr item)
         }
 
         //ItemPrice
-        result = findAndParseItemPrice(item, itemPrice);
+        result = findAndParseItemPrice(item, itemPrice, itemTax);
         if (!result)
         {
             fprintf(stderr,"failed to find and parse item price in item.\n");
@@ -511,7 +835,7 @@ bool SettlementReport::parseItemArray(xmlNodePtr item)
             return false;
         }
  
-        result = addItemFromOrder(sku, qty, itemPrice, itemFees, itemPromotion);
+        result = addItemFromOrder(sku, qty, itemPrice, itemTax, itemFees, itemPromotion);
 
         if (!result)
         {
@@ -520,7 +844,7 @@ bool SettlementReport::parseItemArray(xmlNodePtr item)
         }
 
         item = xmlNextElementSibling(item);
-        printf("sku: %s qty: %d price: %f itemFees: %f \n", sku.c_str(), qty, itemPrice, itemFees);
+        printf("sku: %s qty: %d price: %f tax: %f itemFees: %f \n", sku.c_str(), qty, itemPrice, itemTax, itemFees);
     }
 
     return true;
@@ -528,30 +852,59 @@ bool SettlementReport::parseItemArray(xmlNodePtr item)
 
 void SettlementReport::dumpItemsFromOrders()
 {
-    OrderedSkuInfo orderedSkuInfo;
+    OrderSkuInfo orderSkuInfo;
     int totalQty = 0;
-    float revenue, totalRevenue = 0.0;
-    map<string, OrderedSkuInfo>::iterator iter = orderedSkus.begin();
+    float revenue, totalRevenue = 0.0, totalTax = 0.0;
+    map<string, OrderSkuInfo>::iterator iter = orderSkuMap.begin();
 
-    if (iter == orderedSkus.end())
+    if (iter == orderSkuMap.end())
     {
         cout << "No orders" << endl;
         return;
     }
     
-    cout << "SKU" << '\t' << "Quantity" << '\t' << "Price" << '\t' << "Fees" << '\t' << '\t' << "Promotion" << "Total Revenue"<< endl;
-    for(iter = orderedSkus.begin(); iter != orderedSkus.end(); iter++)
+    cout << "SKU" << '\t' << "Quantity" << '\t' << "Price" << '\t' << "Fees" << '\t' << '\t' << "Promotion" << "Revenue(Price+Fees+Promotion)" << '\t' << "Tax" << endl;
+    for(iter = orderSkuMap.begin(); iter != orderSkuMap.end(); iter++)
     {
-        orderedSkuInfo = iter->second;
-        revenue = orderedSkuInfo.price + orderedSkuInfo.fee + orderedSkuInfo.promotion;
-        cout << iter->first << '\t' << orderedSkuInfo.qty << '\t' << orderedSkuInfo.price << '\t' << orderedSkuInfo.fee << '\t' << orderedSkuInfo.promotion << '\t' << revenue << endl;
+        orderSkuInfo = iter->second;
+        revenue = orderSkuInfo.price + orderSkuInfo.fee + orderSkuInfo.promotion;
+        cout << iter->first << '\t' << orderSkuInfo.qty << '\t' << orderSkuInfo.price << '\t' << orderSkuInfo.fee << '\t' << orderSkuInfo.promotion << '\t' << revenue << '\t' << orderSkuInfo.tax << endl;
 
-        totalQty += orderedSkuInfo.qty;
+        totalQty += orderSkuInfo.qty;
         totalRevenue += revenue;
+        totalTax += orderSkuInfo.tax;
     }
 
     cout << "Total quantity: " << totalQty << endl;
     cout << "Total Revenue: " << totalRevenue << endl;
+    cout << "Total Tax: " << totalTax << endl;
+}
+
+void SettlementReport::dumpItemsFromRefunds()
+{
+    RefundSkuInfo refundSkuInfo;
+    float refund, totalRefund = 0.0, totalTaxRefund = 0.0;
+    map<string, RefundSkuInfo>::iterator iter = refundSkuMap.begin();
+
+    if (iter == refundSkuMap.end())
+    {
+        cout << "No refunds" << endl;
+        return;
+    }
+    
+    cout << "SKU" << '\t' << "Item Refund" << '\t' << "Fee Refund" << '\t' << "Refund(Item+Fee)" << '\t' << "Tax Refund" << endl;
+    for(iter = refundSkuMap.begin(); iter != refundSkuMap.end(); iter++)
+    {
+        refundSkuInfo = iter->second;
+        refund = refundSkuInfo.price + refundSkuInfo.fee;
+        cout << iter->first << '\t' << refundSkuInfo.price << '\t' << refundSkuInfo.fee << '\t' << refund << '\t' << refundSkuInfo.tax << endl;
+
+        totalRefund += refund;
+        totalTaxRefund += refundSkuInfo.tax;
+    }
+
+    cout << "Total Item Refund: " << totalRefund << endl;
+    cout << "Total Tax Refund: " << totalTaxRefund << endl;
 }
 
 SettlementReport::SettlementReport(string docName) : doc(NULL)
@@ -644,7 +997,7 @@ bool SettlementReport::findAndParseMessageType(xmlNodePtr amazonEnvelope, string
         return false;
     }
 
-    messageType = parseString(doc, cur);
+    messageType = parseString(cur);
     return true;
 }
 
@@ -701,6 +1054,69 @@ bool SettlementReport::findAndParseSettlementReport(xmlNodePtr message)
     {
         fprintf(stderr, "failed to find and parse order array in node [SettlementReport].\n");
         return false;
+    }
+
+    result = findCheckAndParseRefundArray(cur);
+
+    if (!result)
+    {
+        fprintf(stderr, "failed to find and parse order array in node [SettlementReport].\n");
+        return false;
+    }
+
+    return true;
+}
+
+bool SettlementReport::findCheckAndParseRefundArray(xmlNodePtr settlementReport)
+{
+    xmlNodePtr cur;
+    bool result;
+
+    if (!settlementReport)
+    {
+        fprintf(stderr, "Null pointer. No settlementReport node. Cannot find and parse refund array\n");
+        return false;
+    }
+
+    cur =  findNodeInChildren(settlementReport, (const xmlChar *)"Refund");
+    if (!cur)
+    {
+        fprintf(stderr, "failed to find node [Refund] in settlementReport.\n");
+        return false;
+    }
+
+    result = checkAndParseRefundArray(cur);
+
+    if (!result)
+    {
+        fprintf(stderr, "failed to check and parse refund array in settlementReport.\n");
+        return false;
+    }
+
+    return true;
+}
+
+bool SettlementReport::checkAndParseRefundArray(xmlNodePtr refund)
+{
+    string itemSku;
+
+    if (!refund)
+    {
+        fprintf(stderr, "Null pointer. No refund node. Cannot check and parse refund array.\n");
+        return false;
+    }
+
+    while (refund)
+    {
+        if (!(xmlStrcmp(refund->name, (const xmlChar *)"Refund")))
+        {
+            if (!parseRefund(refund))
+            {
+                fprintf(stderr, "failed to parse refund in refund array.\n");
+                return false;
+            }
+        }
+        refund = xmlNextElementSibling(refund);
     }
 
     return true;
@@ -779,5 +1195,7 @@ int main(int argc, char **argv)
         return 1;
     }
     report.dumpItemsFromOrders();
+    printf("\n");
+    report.dumpItemsFromRefunds();
     return 0;
 }
