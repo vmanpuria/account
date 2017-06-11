@@ -8,6 +8,8 @@
 #include <map>
 #include <iostream>
 
+#include "settlement_report.h"
+
 // TODO: check for failure to add to map
 bool SettlementReport::addItemFromOrder(string &sku, int qty, float itemPrice, float itemFees, float itemPromotion)
 {
@@ -32,7 +34,7 @@ bool SettlementReport::addItemFromOrder(string &sku, int qty, float itemPrice, f
     return true;
 }
 
-xmlNodePtr SettlementReport::findNodeInChildren(xmlNodePtr cur, const xmlChar *key)
+xmlNodePtr SettlementReport::findNodeInChildren(xmlNodePtr cur, const xmlChar *key, bool optionalFlag)
 {
     if (!cur)
     {
@@ -57,7 +59,10 @@ xmlNodePtr SettlementReport::findNodeInChildren(xmlNodePtr cur, const xmlChar *k
 
     if (!cur)
     {
-        fprintf(stderr,"node [%s] not found in children\n", key);
+        if (!optionalFlag)
+        {
+            fprintf(stderr,"node [%s] not found in children\n", key);
+        }
     }
 
     return cur;
@@ -126,7 +131,7 @@ bool SettlementReport::findAndParseFulfillment(xmlNodePtr order)
     if (!order)
     {
         fprintf(stderr, "Null pointer. No order node. Cannot find and parse fulfillment.\n");
-        return NULL;
+        return false;
     }
 
     cur = findNodeInChildren(order, (const xmlChar *)"Fulfillment");
@@ -180,9 +185,10 @@ bool SettlementReport::findAndParseItemArray(xmlNodePtr fulfillment)
 
 bool SettlementReport::parseFeeArray(xmlNodePtr fee, float &fees)
 {
+    bool result;
     float amount;
 
-    if (!fees)
+    if (!fee)
     {
         fprintf(stderr,"Null pointer. No Fee node. Cannot parse fee array.\n");
         return false;
@@ -235,7 +241,7 @@ bool SettlementReport::findAndParseItemPrice(xmlNodePtr item, float &itemPrice)
     return true;
 }
 
-bool SettlementReport::findAndParseComponentArray(xmlNodePtr itemPrice, float &itemPrice)
+bool SettlementReport::findAndParseComponentArray(xmlNodePtr itemPrice, float &price)
 {
     xmlNodePtr cur;
     bool result;
@@ -254,7 +260,7 @@ bool SettlementReport::findAndParseComponentArray(xmlNodePtr itemPrice, float &i
         return false;
     }
 
-    result = parseComponentArray(cur, itemPrice);
+    result = parseComponentArray(cur, price);
     if (!result)
     {
         fprintf(stderr, "failed to parse component array in itemPrice.\n");
@@ -266,6 +272,7 @@ bool SettlementReport::findAndParseComponentArray(xmlNodePtr itemPrice, float &i
 
 bool SettlementReport::parseComponentArray(xmlNodePtr component, float &itemPrice)
 {
+    bool result;
     float amount;
 
     if (!component)
@@ -312,14 +319,14 @@ bool SettlementReport::findAndParseAmount(xmlNodePtr amountParent, float &amount
     return true;
 }
 
-bool SettlementReport::findAndParseFeeArray(xmlNodePtr itemFees, float &itemFees)
+bool SettlementReport::findAndParseFeeArray(xmlNodePtr itemFees, float &fees)
 {
     xmlNodePtr cur;
     bool result;
 
     if (!itemFees)
     {
-        fprintf(stderr,"Null pointer. No itemFees node. Cannot find and parse fees array.\n");
+        fprintf(stderr,"Null pointer. No itemFees node. Cannot find and parse fee array.\n");
         return false;
     }
 
@@ -331,7 +338,7 @@ bool SettlementReport::findAndParseFeeArray(xmlNodePtr itemFees, float &itemFees
         return false;
     }
 
-    result = parseFeeArray(cur, itemFees);
+    result = parseFeeArray(cur, fees);
 
     if (!result)
     {
@@ -345,6 +352,7 @@ bool SettlementReport::findAndParseFeeArray(xmlNodePtr itemFees, float &itemFees
 bool SettlementReport::findAndParseItemFees(xmlNodePtr item, float &itemFees)
 {
     xmlNodePtr cur;
+    bool result;
 
     if (!item)
     {
@@ -383,11 +391,12 @@ bool SettlementReport::findAndParsePromotion(xmlNodePtr item, float &itemPromoti
         return false;
     }
 
-    cur =  findNodeInChildren(item, (const xmlChar *)"Promotion");
+    cur =  findNodeInChildren(item, (const xmlChar *)"Promotion", true);
     if (!cur)
     {
-        fprintf(stderr, "failed to find node [Promotion] in item.\n");
-        return false;
+        // Promotion is an optional node
+        itemPromotion = 0.0;
+        return true;
     }
 
     result = findAndParseAmount(cur, amount);
@@ -423,7 +432,7 @@ bool SettlementReport::findAndParseSku(xmlNodePtr item, string &sku)
     return true;
 }
  
-bool SettlementReport::findAndParseQuantity(xmlNodePtr item, int quantity)
+bool SettlementReport::findAndParseQuantity(xmlNodePtr item, int &quantity)
 {
     xmlNodePtr cur;
 
@@ -469,17 +478,13 @@ bool SettlementReport::parseItemArray(xmlNodePtr item)
             return false;
         }
 
-        printf("sku: %s\n", sku.c_str());
-
         //Quantity
         result = findAndParseQuantity(item, qty);
         if (!result)
         {
-            fprintf(stderr, "failt to find and parse quantity in item.\n");
+            fprintf(stderr, "failed to find and parse quantity in item.\n");
             return false;
         }
-
-        printf("qty: %d\n", qty);
 
         //ItemPrice
         result = findAndParseItemPrice(item, itemPrice);
@@ -488,7 +493,6 @@ bool SettlementReport::parseItemArray(xmlNodePtr item)
             fprintf(stderr,"failed to find and parse item price in item.\n");
             return false;
         }
-        printf("price: %f\n", itemPrice);
 
         //ItemFees 
         result = findAndParseItemFees(item, itemFees);
@@ -498,7 +502,6 @@ bool SettlementReport::parseItemArray(xmlNodePtr item)
             fprintf(stderr,"failed to find and parse item fees in item.\n");
             return false;
         }
-        printf("itemFees: %f\n", itemFees);
 
         //Promotion (optional)
         result = findAndParsePromotion(item, itemPromotion);
@@ -517,10 +520,9 @@ bool SettlementReport::parseItemArray(xmlNodePtr item)
         }
 
         item = xmlNextElementSibling(item);
+        printf("sku: %s qty: %d price: %f itemFees: %f \n", sku.c_str(), qty, itemPrice, itemFees);
     }
 
-    //fprintf(stderr,"***** debug ******. return false.\n");
-    //return false;
     return true;
 }
 
@@ -552,7 +554,7 @@ void SettlementReport::dumpItemsFromOrders()
     cout << "Total Revenue: " << totalRevenue << endl;
 }
 
-SettlementReport::SettlementReport(string &docName) : doc(NULL)
+SettlementReport::SettlementReport(string docName) : doc(NULL)
 {
     doc = xmlParseFile(docName.c_str());
 
@@ -569,16 +571,6 @@ SettlementReport::~SettlementReport()
         xmlFreeDoc(doc);
         doc = NULL;
     }
-}
-
-bool SettlementReport::parseSettlementReport()
-{
-    bool result;
-    xmlNodePtr settlementReport;
-
-    settlementReport = findSettlementReportInDoc();
-    result = (settlementReport ? findAndParseOrderArray(settlementReport) : false);
-    result = (result ? dumpOrders() : result);
 }
 
 bool SettlementReport::findAndParseAmazonEnvelope()
@@ -618,7 +610,7 @@ bool SettlementReport::findAndParseAmazonEnvelope()
         return false;
     }
 
-    if ((xmlStrcmp(messageType.c_str(), (const xmlChar *)"SettlementReport")))
+    if ((xmlStrcmp((const xmlChar *)messageType.c_str(), (const xmlChar *)"SettlementReport")))
     {
         fprintf(stderr, "messageType [%s] is not SettlementReport. Invalid document\n", messageType.c_str());
         return false;
@@ -703,7 +695,7 @@ bool SettlementReport::findAndParseSettlementReport(xmlNodePtr message)
         return false;
     }
 
-    result = findAndParseOrderArray(cur);
+    result = findCheckAndParseOrderArray(cur);
 
     if (!result)
     {
@@ -714,7 +706,7 @@ bool SettlementReport::findAndParseSettlementReport(xmlNodePtr message)
     return true;
 }
 
-bool SettlementReport::findAndParseOrderArray(xmlNodePtr settlementReport)
+bool SettlementReport::findCheckAndParseOrderArray(xmlNodePtr settlementReport)
 {
     xmlNodePtr cur;
     bool result;
@@ -784,6 +776,8 @@ int main(int argc, char **argv)
     if (!result)
     {
         fprintf(stderr, "failed to parse Amazon envelope.\n");
+        return 1;
     }
+    report.dumpItemsFromOrders();
     return 0;
 }

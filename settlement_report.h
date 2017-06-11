@@ -1,3 +1,5 @@
+#ifndef __SETTLEMENT_REPORT_H__
+#define __SETTLEMENT_REPORT_H__
 #include <string>
 using namespace std;
 
@@ -29,35 +31,36 @@ class SettlementReport
         float parseFloat(xmlDocPtr doc, xmlNodePtr cur);
         int parseInt(xmlDocPtr doc, xmlNodePtr cur);
 
-        xmlNodePtr findNodeInChildren(xmlNodePtr cur, const xmlChar *key);
+        xmlNodePtr findNodeInChildren(xmlNodePtr cur, const xmlChar *key, bool optionalFlag = false);
 
         bool findAndParseMessageType(xmlNodePtr amazonEnvelope, string &messageType);
         bool findAndParseMessage(xmlNodePtr amazonEnvelope);
         bool findAndParseSettlementReport(xmlNodePtr message);
-        bool findAndParseOrderArray(xmlNodePtr settlementReport);
+        bool findCheckAndParseOrderArray(xmlNodePtr settlementReport);
         bool checkAndParseOrderArray(xmlNodePtr order);
         bool parseOrder(xmlNodePtr order);
         bool findAndParseFulfillment(xmlNodePtr order);
         bool findAndParseItemArray(xmlNodePtr fulfillment);
         bool parseItemArray(xmlNodePtr item);
         bool findAndParseSku(xmlNodePtr item, string &sku);
-        bool findAndParseQuantity(xmlNodePtr item, int quantity);
+        bool findAndParseQuantity(xmlNodePtr item, int &quantity);
         bool findAndParseItemPrice(xmlNodePtr item, float &itemPrice);
         bool findAndParseItemFees(xmlNodePtr item, float &itemFees);
         bool findAndParsePromotion(xmlNodePtr item, float &itemPromotion);
 
-        bool findAndParseComponentArray(xmlNodePtr itemPrice, float &itemPrice);
+        bool findAndParseComponentArray(xmlNodePtr itemPrice, float &price);
         bool parseComponentArray(xmlNodePtr component, float &itemPrice);
         bool findAndParseAmount(xmlNodePtr amountParent, float &amount);
-        bool findAndParseFeeArray(xmlNodePtr itemFees, float &itemFees);
+        bool findAndParseFeeArray(xmlNodePtr itemFees, float &fees);
         bool parseFeeArray(xmlNodePtr fee, float &fees);
 
         bool addItemFromOrder(string &sku, int qty, float itemPrice, float itemFees, float itemPromotion);
-        void dumpItemsFromOrders();
 
     public:
-        SettlementReport(std::string &docName);
+        SettlementReport(std::string docName);
         ~SettlementReport();
 
         bool findAndParseAmazonEnvelope();
+        void dumpItemsFromOrders();
 };
+#endif //__SETTLEMENT_REPORT_H__
