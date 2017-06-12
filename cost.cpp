@@ -21,11 +21,34 @@ void Cost::dumpCost()
 {
     map<string, float>::iterator iter;
 
+    cout << endl;
+    if (!costMap.size())
+    {
+        fprintf(stderr, "No sku in cost map\n");
+        return;
+    }
+
     cout << "SKU" << '\t' << "Cost" << endl;
     for (iter = costMap.begin(); iter != costMap.end(); iter++)
     {
         cout << iter->first << '\t' << iter->second << endl;
     }
+    cout << endl;
+    cout << "Total SKUs: " << costMap.size() << endl;
+}
+
+bool Cost::getCost(string &sku, float &cost)
+{
+    map<string, float>::iterator iter;
+
+    iter = costMap.find(sku);
+    if (iter == costMap.end())
+    {
+        fprintf(stderr, "sku [%s] not found in cost map.\n", sku.c_str());
+        return false;
+    }
+    cost = iter->second;
+    return true;
 }
 
 bool Cost::addCostToMap(string &sku, float cost)
@@ -59,7 +82,7 @@ bool Cost::parseProduct(xmlNodePtr product)
         return false;
     }
 
-    cur = cur->xmlChildrenNode;
+    cur = product->xmlChildrenNode;
     while (cur)
     {
         if ((!xmlStrcmp(cur->name, (const xmlChar *)"Sku")))
@@ -99,6 +122,7 @@ bool Cost::parseProduct(xmlNodePtr product)
 bool Cost::parseCost()
 {
     bool result;
+    bool flag = false;
     xmlNodePtr cur = getRootElement();
 
     if (!cur)
@@ -121,6 +145,7 @@ bool Cost::parseCost()
     {
         if ((!xmlStrcmp(cur->name, (const xmlChar *)"Product")))
         {
+            flag = true;
             result = parseProduct(cur);
 
             if (!result)
@@ -131,6 +156,12 @@ bool Cost::parseCost()
         }
 
         cur = xmlNextElementSibling(cur);
+    }
+
+    if (!flag)
+    {
+        fprintf(stderr, "failed to parse node [Cost]. no node [Product] found.\n");
+        return false;
     }
 
     return true;

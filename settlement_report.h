@@ -2,6 +2,7 @@
 #define __SETTLEMENT_REPORT_H__
 
 #include "xml_doc.h"
+#include "cost.h"
 
 class Summary
 {
@@ -11,6 +12,7 @@ class Summary
         int orderSkuCount;
         float orderAmount;
         float orderTaxAmount;
+        float orderCostAmount;
 
         // Refund
         int refundCount;
@@ -26,7 +28,7 @@ class Summary
         string startDate;
         string endDate;
 
-        Summary() : orderCount(0), orderSkuCount(0), orderAmount(0.0), orderTaxAmount(0.0),
+        Summary() : orderCount(0), orderSkuCount(0), orderAmount(0.0), orderTaxAmount(0.0), orderCostAmount(0.0),
                     refundCount(0), refundAmount(0.0), refundTaxAmount(0.0),
                     otherCount(0), otherAmount(0.0), 
                     totalAmount(0.0), startDate(), endDate() { }
@@ -36,11 +38,13 @@ class Summary
             float total = orderAmount + orderTaxAmount + refundAmount + refundTaxAmount + otherAmount; 
             float diff = totalAmount - total;
 
-            cout << "Order: orders: " << orderCount << " items: " << orderSkuCount << " amount: " << orderAmount << " tax: " << orderTaxAmount << endl;
+            cout << endl;
+            cout << "Order: orders: " << orderCount << " items: " << orderSkuCount << " amount: " << orderAmount << " tax: " << orderTaxAmount << " cost: " << orderCostAmount << endl;
             cout << "Refund: refunds: " << refundCount << " amount: " << refundAmount << " tax: " << refundTaxAmount << endl;
             cout << "Other: others: " << otherCount << " amount: " << otherAmount << endl;
             cout << "Settlement: amount: " << totalAmount << " start: " << startDate << " end: " << endDate << endl;
             cout << "Total (Order + Refund + Other): amount: " << total << " diff: " << diff << endl;
+            cout << "Profit: from orders: " << (orderAmount + orderCostAmount) << " cash profit: " << (total + orderCostAmount) << endl;
 
             cout << endl;
         }
@@ -54,8 +58,9 @@ class OrderSkuInfo
         float fee;
         float promotion;
         float tax;
+        float cost;
 
-        OrderSkuInfo() : qty(0), price(0.0), fee(0.0), promotion(0.0), tax(0.0) { }
+        OrderSkuInfo() : qty(0), price(0.0), fee(0.0), promotion(0.0), tax(0.0), cost(0.0) { }
 
         void operator+=(OrderSkuInfo &orderSkuInfo)
         {
@@ -64,6 +69,7 @@ class OrderSkuInfo
             fee += orderSkuInfo.fee;
             promotion += orderSkuInfo.promotion;
             tax += orderSkuInfo.tax;
+            cost += orderSkuInfo.cost;
         }
 };
 
@@ -89,14 +95,10 @@ class RefundSkuInfo
 class SettlementReport : public XmlDoc
 {
     private:
-        //xmlDocPtr doc; 
+        Cost cost;
         map<string, OrderSkuInfo> orderSkuMap;
         map<string, RefundSkuInfo> refundSkuMap;
         Summary summary;
-
-        //string parseString(xmlNodePtr cur);
-        //float parseFloat(xmlNodePtr cur);
-        //int parseInt(xmlNodePtr cur);
 
         xmlNodePtr findNodeInChildren(xmlNodePtr cur, const xmlChar *key, bool optionalFlag = false);
 
@@ -134,11 +136,13 @@ class SettlementReport : public XmlDoc
         bool parseItemPromotionAdjustment(xmlNodePtr itemPromotionAdjustment, float &itemPromotion);
         bool parseOtherTransaction(xmlNodePtr otherTransaction);
 
+        bool parseDoc();
+
     public:
-        SettlementReport(std::string docName);
+        SettlementReport(string docName, string costFile);
         ~SettlementReport();
 
-        bool findAndParseAmazonEnvelope();
+        bool parse();
         void dumpItemsFromOrders();
         void dumpItemsFromRefunds();
         void dumpSummary();
