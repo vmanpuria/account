@@ -163,6 +163,7 @@ bool SettlementReport::parseOtherTransaction(xmlNodePtr otherTransaction)
     xmlNodePtr cur;
     string transactionType;
     float amount;
+    bool typeFlag = false, amountFlag = false;
 
     if (!otherTransaction)
     {
@@ -175,17 +176,51 @@ bool SettlementReport::parseOtherTransaction(xmlNodePtr otherTransaction)
     {
         if (!xmlStrcmp(cur->name, (const xmlChar *)"TransactionType"))
         {
+            if (typeFlag)
+            {
+                fprintf(stderr, "Transaction type was already found. Unexpected.\n");
+                return false;
+            }
+
+            typeFlag = true;
             transactionType = parseString(cur);
         }
         else if (!xmlStrcmp(cur->name, (const xmlChar *)"Amount"))
         {
+            if (amountFlag)
+            {
+                fprintf(stderr, "Amount was already found. Unexpected.\n");
+                return false;
+            }
+
+            amountFlag = true;
             amount = parseFloat(cur);
-            
-            summary.otherCount++;
-            summary.otherAmount += amount;
         }
 
         cur = xmlNextElementSibling(cur);
+    }
+
+    if (!typeFlag)
+    {
+        fprintf(stderr, "Transaction type not found. cannot parse other transaction.\n");
+        return false;
+    }
+
+    if (!amountFlag)
+    {
+        fprintf(stderr, "Amount not found. cannot parse other transaction.\n");
+        return false;
+    }
+
+    if (!transactionType.compare("Inbound Transportation Charge"))
+    {
+        summary.otherInboundCount++;
+        summary.otherInboundAmount += amount;
+    }
+    else
+    {
+        summary.otherCount++;
+        summary.otherAmount += amount;
     }
 
     return true;

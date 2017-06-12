@@ -22,6 +22,8 @@ class Summary
         // Other
         int otherCount;
         float otherAmount;
+        int otherInboundCount;
+        float otherInboundAmount;
 
         // Settlement
         float totalAmount;
@@ -30,21 +32,22 @@ class Summary
 
         Summary() : orderCount(0), orderSkuCount(0), orderAmount(0.0), orderTaxAmount(0.0), orderCostAmount(0.0),
                     refundCount(0), refundAmount(0.0), refundTaxAmount(0.0),
-                    otherCount(0), otherAmount(0.0), 
+                    otherCount(0), otherAmount(0.0), otherInboundCount(0), otherInboundAmount(0.0), 
                     totalAmount(0.0), startDate(), endDate() { }
 		
 		void dump()
         {
-            float total = orderAmount + orderTaxAmount + refundAmount + refundTaxAmount + otherAmount; 
+            float total = orderAmount + orderTaxAmount + refundAmount + refundTaxAmount + otherAmount + otherInboundAmount; 
             float diff = totalAmount - total;
 
             cout << endl;
             cout << "Order: orders: " << orderCount << " items: " << orderSkuCount << " amount: " << orderAmount << " tax: " << orderTaxAmount << " cost: " << orderCostAmount << endl;
             cout << "Refund: refunds: " << refundCount << " amount: " << refundAmount << " tax: " << refundTaxAmount << endl;
             cout << "Other: others: " << otherCount << " amount: " << otherAmount << endl;
+            cout << "Other: Inbound Transportation: " << otherInboundCount << " amount: " << otherInboundAmount << endl;
             cout << "Settlement: amount: " << totalAmount << " start: " << startDate << " end: " << endDate << endl;
             cout << "Total (Order + Refund + Other): amount: " << total << " diff: " << diff << endl;
-            cout << "Profit: from orders: " << (orderAmount + orderCostAmount) << " cash profit: " << (total + orderCostAmount) << endl;
+            cout << "Profit: from orders: " << (orderAmount + orderCostAmount) << " profit after refunds: " << (total + orderCostAmount - otherInboundAmount) << endl;
 
             cout << endl;
         }
