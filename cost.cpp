@@ -45,7 +45,8 @@ bool Cost::getCost(string &sku, float &cost)
     if (iter == costMap.end())
     {
         fprintf(stderr, "sku [%s] not found in cost map.\n", sku.c_str());
-        return false;
+        //return false;
+        return true;
     }
     cost = iter->second;
     return true;
@@ -130,8 +131,6 @@ bool Cost::parseCost()
         fprintf(stderr, "empty document or no/invalid document\n");
         return false;
     }
-
-    printf("name of root node: %s\n", cur->name);
 
     // Cost
     if (xmlStrcmp(cur->name, (const xmlChar *)"Cost"))

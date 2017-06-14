@@ -7,11 +7,15 @@
 #include <string>
 #include <map>
 #include <iostream>
+#include <sys/types.h>
+#include <dirent.h>
 
 #include "settlement_report.h"
 #include "cost.h"
 
-// TODO: check for failure to add to map
+//#undef DEBUG
+//#define DEBUG
+
 bool SettlementReport::addItemFromOrder(string &sku, int qty, float itemPrice, float itemTax, float itemFees, float itemPromotion)
 {
     OrderSkuInfo orderSkuInfo;
@@ -45,7 +49,9 @@ bool SettlementReport::addItemFromOrder(string &sku, int qty, float itemPrice, f
         orderSkuMap[sku] += orderSkuInfo;
     }
 
-    printf("sku: %s qty: %d price: %f tax: %f itemFees: %f itemPromotion: %f itemCost: %f\n", sku.c_str(), qty, itemPrice, itemTax, itemFees, itemPromotion, itemCost);
+#ifdef DEBUG
+    //printf("sku: %s qty: %d price: %f tax: %f itemFees: %f itemPromotion: %f itemCost: %f\n", sku.c_str(), qty, itemPrice, itemTax, itemFees, itemPromotion, itemCost);
+#endif
     summary.orderCount++;
     summary.orderSkuCount += qty;
     summary.orderAmount += itemPrice + itemFees + itemPromotion;
@@ -74,7 +80,9 @@ bool SettlementReport::addItemFromRefund(string &sku, float itemPrice, float ite
         refundSkuMap[sku] += refundSkuInfo;
     }
 
+#ifdef DEBUG
     printf("refund: sku: %s price: %f tax: %f itemFees: %f itemPromotion: %f\n", sku.c_str(), itemPrice, itemTax, itemFees, itemPromotion);
+#endif
     summary.refundCount++;
     summary.refundAmount += itemPrice + itemFees + itemPromotion;
     summary.refundTaxAmount += itemTax;
@@ -1035,13 +1043,13 @@ void SettlementReport::dumpItemsFromOrders()
     }
     
     cout << endl;
-    cout << "SKU" << '\t' << "Quantity" << '\t' << "Price" << '\t' << "Fees" << '\t' << "Promotion" << '\t' << "Cost" << '\t' << "Revenue(Price+Fees+Promotion)" << '\t' << "Tax" << '\t' << "Profit" << endl;
+    cout << "SKU" << '\t' << "Quantity" << '\t' << "Price" << '\t' << "Fees" << '\t' << "Promotion" << '\t' << "Revenue(Price+Fees+Promotion)" << '\t' << "Cost" << '\t' << "Tax" << '\t' << "Profit" << endl;
     for(iter = orderSkuMap.begin(); iter != orderSkuMap.end(); iter++)
     {
         orderSkuInfo = iter->second;
         revenue = orderSkuInfo.price + orderSkuInfo.fee + orderSkuInfo.promotion;
-        profit = revenue - orderSkuInfo.cost;
-        cout << iter->first << '\t' << orderSkuInfo.qty << '\t' << orderSkuInfo.price << '\t' << orderSkuInfo.fee << '\t' << orderSkuInfo.promotion << '\t' << orderSkuInfo.cost << '\t' << revenue << '\t' << orderSkuInfo.tax << '\t' << profit << endl;
+        profit = revenue + orderSkuInfo.cost;
+        cout << iter->first << '\t' << orderSkuInfo.qty << '\t' << orderSkuInfo.price << '\t' << orderSkuInfo.fee << '\t' << orderSkuInfo.promotion << '\t' << revenue << '\t' << orderSkuInfo.cost << '\t' << orderSkuInfo.tax << '\t' << profit << endl;
 
         totalQty += orderSkuInfo.qty;
         totalRevenue += revenue;
@@ -1140,8 +1148,6 @@ bool SettlementReport::parseDoc()
         fprintf(stderr, "failed to get root element. empty document or no/invalid document\n");
         return false;
     }
-
-    printf("name of root node: %s\n", cur->name);
 
     // AmazonEnvelope
     if (xmlStrcmp(cur->name, (const xmlChar *) "AmazonEnvelope"))
@@ -1338,26 +1344,80 @@ bool SettlementReport::parseSettlementReport(xmlNodePtr settlementReport)
 int main(int argc, char **argv)
 {
     bool result;
-    SettlementReport report("./xmlData/5251691949017313.txt", "./xmlData/cost.xml");
-    printf("\n");
-#if 0
-    if (argc <= 1) {
-        printf("Usage: %s docname\n", argv[0]);
-        return(0);
-    }
-    docname = argv[1];
-#endif
- 
-    result = report.parse();
-    if (!result)
-    {
-        fprintf(stderr, "failed to parse Amazon envelope.\n");
-        return 2;
-    }
-    report.dumpItemsFromOrders();
-    report.dumpItemsFromRefunds();
-    report.dumpSummary();
+    string file, ext = ".txt", xmlDir = "xmlData";
+    string settlementFile, costFile;
+    struct dirent *entry;
+    DIR *dir = opendir("./xmlData");
+    size_t extLen, fileLen;
+    
+    int count = 0;
 
+    if (dir == NULL)
+    {
+        fprintf(stderr, "failed to open directory ./xmlData.\n");
+        return 3;
+    }
+
+    costFile = xmlDir;
+    costFile.append("/cost.xml");
+
+    extLen = ext.length();
+    while ((entry = readdir(dir)) != NULL)
+    {
+        file = entry->d_name;
+        fileLen = file.length();
+
+        if (fileLen <= extLen)
+        {
+            continue;
+        }
+
+        if (file.compare(fileLen - extLen, string::npos, ext))
+        {
+            continue;
+        }
+
+        settlementFile = "./xmlData/5395199049017327.txt";
+        //settlementFile = "./xmlData/5251691949017313.txt";
+        //settlementFile = "./xmlData/5111340848017299.txt";
+        //settlementFile = "./xmlData/4967589632017285.txt";
+        //settlementFile = "./xmlData/4827028021017271.txt";
+        //settlementFile = "./xmlData/4690852492017257.txt";
+        //settlementFile = "./xmlData/4552318323017243.txt";
+#if 0
+        settlementFile = xmlDir;
+        settlementFile.push_back('/');
+        settlementFile.append(file);
+#endif
+
+        cout << "File: " << settlementFile << endl;
+        SettlementReport report(settlementFile, costFile);
+        printf("\n");
+#if 0
+        if (argc <= 1) {
+            printf("Usage: %s docname\n", argv[0]);
+            return(0);
+        }
+        docname = argv[1];
+#endif
+
+        result = report.parse();
+        if (!result)
+        {
+            fprintf(stderr, "failed to parse Amazon envelope.\n");
+            return 2;
+        }
+#ifdef DEBUG
+        report.dumpItemsFromOrders();
+        report.dumpItemsFromRefunds();
+#endif
+        report.dumpSummary();
+
+        count++;
+        if (count >= 1) break;
+    }
+
+    closedir(dir);
     printf("\n");
     return 0;
 }
