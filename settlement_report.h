@@ -41,13 +41,16 @@ class Summary
             float diff = totalAmount - total;
 
             cout << endl;
-            cout << "Order: orders: " << orderCount << " items: " << orderSkuCount << " amount: " << orderAmount << " tax: " << orderTaxAmount << " cost: " << orderCostAmount << endl;
-            cout << "Refund: refunds: " << refundCount << " amount: " << refundAmount << " tax: " << refundTaxAmount << endl;
-            cout << "Other: others: " << otherCount << " amount: " << otherAmount << endl;
-            cout << "Other: Inbound Transportation: " << otherInboundCount << " amount: " << otherInboundAmount << endl;
+            cout << "Order: count: " << orderCount << " skuCount: " << orderSkuCount << " amount: " << orderAmount << " tax: " << orderTaxAmount << " cost: " << orderCostAmount << endl;
+            cout << "Refund: count: " << refundCount << " amount: " << refundAmount << " tax: " << refundTaxAmount << endl;
+            cout << "Other: count: " << otherCount << " amount: " << otherAmount << endl;
+            cout << "Other: Inbound Transportation: count: " << otherInboundCount << " amount: " << otherInboundAmount << endl;
             cout << "Settlement: amount: " << totalAmount << " start: " << startDate << " end: " << endDate << endl;
-            cout << "Total (Order + Refund + Other): amount: " << total << " diff: " << diff << endl;
-            cout << "Profit: from orders: " << (orderAmount + orderCostAmount) << " profit after refunds: " << (total + orderCostAmount - otherInboundAmount) << endl;
+            cout << "(Order + Refund + Other): amount: " << total << endl;
+            cout << "Diff (Settlement - (Order + Refund + Other)): amount: " << diff << endl;
+            cout << "Profit: from orders: " << (orderAmount + orderCostAmount) << endl;
+            cout << "Profit: after refunds: " << (orderAmount + refundAmount + otherAmount + orderCostAmount) << endl;
+            cout << "Profit: after refunds: " << (totalAmount + orderCostAmount - (orderTaxAmount + refundTaxAmount) - otherInboundAmount) << endl;
 
             cout << endl;
         }

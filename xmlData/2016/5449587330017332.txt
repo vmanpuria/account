@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmazonEnvelope xmlns:java="http://xml.apache.org/xalan/java" xmlns:amzn="http://www.amazon.com/XSL/Transform/Extensions" xmlns:xalan="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"><Header><DocumentVersion>'4.01'</DocumentVersion><MerchantIdentifier>'18210289205'</MerchantIdentifier></Header><MessageType>SettlementReport</MessageType><Message><MessageID>1</MessageID><SettlementReport>
+<SettlementData>
+<AmazonSettlementID>6160781781</AmazonSettlementID>
+<TotalAmount currency="USD">16500.42</TotalAmount>
+<StartDate>2016-08-05T22:00:55+00:00</StartDate>
+<EndDate>2016-08-06T14:35:59+00:00</EndDate>
+<DepositDate>2016-08-08T14:35:59+00:00</DepositDate>
+</SettlementData>
+<Order>
+<AmazonOrderID>109-5537539-9608240</AmazonOrderID>
+<MerchantOrderID>109-5537539-9608240</MerchantOrderID>
+<ShipmentID>Db83hfWyH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-05T22:28:55+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>03153717670362</AmazonOrderItemCode>
+<SKU>JE-TZIX-TPB6</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">49.99</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">5.48</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-3.12</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-7.50</Amount>
+</Fee>
+</ItemFees>
+<Promotion>
+<MerchantPromotionID>US Core Free Shipping</MerchantPromotionID>
+<Type>Shipping</Type>
+<Amount currency="USD">-5.48</Amount>
+</Promotion>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>111-4695209-3200249</AmazonOrderID>
+<MerchantOrderID>111-4695209-3200249</MerchantOrderID>
+<ShipmentID>DYbjDjQzH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T09:44:15+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>66595668680418</AmazonOrderItemCode>
+<SKU>7E-CT1L-DDMI</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">17.41</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-2.34</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-2.61</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>104-8027241-2378612</AmazonOrderID>
+<MerchantOrderID>104-8027241-2378612</MerchantOrderID>
+<ShipmentID>DJg6mkcdH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T09:17:59+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>28626850752026</AmazonOrderItemCode>
+<SKU>7L-OGH5-GEFH</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.71</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-3.12</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.41</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>107-8564624-9497038</AmazonOrderID>
+<MerchantOrderID>107-8564624-9497038</MerchantOrderID>
+<ShipmentID>DqFxBRqkH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T08:36:57+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>07008462172698</AmazonOrderItemCode>
+<SKU>NQ-OHS9-SDEW</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">4.34</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">0.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-0.50</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+</ItemFees>
+<Promotion>
+<MerchantPromotionID>US Core Free Shipping</MerchantPromotionID>
+<Type>Shipping</Type>
+<Amount currency="USD">-0.99</Amount>
+</Promotion>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>105-4744069-3109842</AmazonOrderID>
+<MerchantOrderID>105-4744069-3109842</MerchantOrderID>
+<ShipmentID>DzQSBLWK4</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T08:00:53+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>69089220063138</AmazonOrderItemCode>
+<SKU>TR-RNI7-0JYH</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">15.87</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-2.34</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-2.38</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>103-2752904-5191434</AmazonOrderID>
+<MerchantOrderID>103-2752904-5191434</MerchantOrderID>
+<ShipmentID>DzH9bBjVb</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T07:30:56+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>15621651826914</AmazonOrderItemCode>
+<SKU>7E-CT1L-DDMI</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">17.41</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-2.34</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-2.61</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>113-0764847-7153800</AmazonOrderID>
+<MerchantOrderID>113-0764847-7153800</MerchantOrderID>
+<ShipmentID>DsVzkxqFH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T05:36:11+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>67583098731786</AmazonOrderItemCode>
+<SKU>JE-TZIX-TPB6</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">49.99</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">3.71</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-3.12</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-7.50</Amount>
+</Fee>
+</ItemFees>
+<Promotion>
+<MerchantPromotionID>US Core Free Shipping</MerchantPromotionID>
+<Type>Shipping</Type>
+<Amount currency="USD">-3.71</Amount>
+</Promotion>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>116-8790937-6181824</AmazonOrderID>
+<MerchantOrderID>116-8790937-6181824</MerchantOrderID>
+<ShipmentID>DMgdhdwqH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T05:32:12+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>46074254160362</AmazonOrderItemCode>
+<SKU>7E-CT1L-DDMI</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">17.41</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-2.34</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-2.61</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>116-9077791-5551411</AmazonOrderID>
+<MerchantOrderID>116-9077791-5551411</MerchantOrderID>
+<ShipmentID>Dwd5XCsPH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T05:15:14+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>14153204889442</AmazonOrderItemCode>
+<SKU>35-02BO-Y7IR</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">49.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-3.12</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-7.50</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>107-6725825-1287400</AmazonOrderID>
+<MerchantOrderID>107-6725825-1287400</MerchantOrderID>
+<ShipmentID>DDMF5BwGH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T04:50:25+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>18675859332738</AmazonOrderItemCode>
+<SKU>JE-TZIX-TPB6</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">49.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-3.12</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-7.50</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>107-3039118-4616247</AmazonOrderID>
+<MerchantOrderID>107-3039118-4616247</MerchantOrderID>
+<ShipmentID>DhD35vqTH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T04:44:37+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>31244265601554</AmazonOrderItemCode>
+<SKU>2A-5RO7-1MFU</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">48.51</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-3.12</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-14.56</Amount>
+</Fee>
+</ItemFees>
+</Item>
+<Item>
+<AmazonOrderItemCode>31244265601554</AmazonOrderItemCode>
+<SKU>2A-5RO7-1MFU</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">48.51</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-3.12</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-2280299-3075414</AmazonOrderID>
+<MerchantOrderID>110-2280299-3075414</MerchantOrderID>
+<ShipmentID>DW9wz8v9b</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T04:23:07+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>14860431563642</AmazonOrderItemCode>
+<SKU>TR-RNI7-0JYH</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">15.87</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-2.34</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-2.38</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>108-5790685-0613827</AmazonOrderID>
+<MerchantOrderID>108-5790685-0613827</MerchantOrderID>
+<ShipmentID>DG7QClsyH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T01:56:17+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>28913969126146</AmazonOrderItemCode>
+<SKU>2A-5RO7-1MFU</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">48.51</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-3.12</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-7.28</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>109-3552432-2797012</AmazonOrderID>
+<MerchantOrderID>109-3552432-2797012</MerchantOrderID>
+<ShipmentID>DlBWbbWG4</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-05T22:53:06+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>32472612066938</AmazonOrderItemCode>
+<SKU>TR-RNI7-0JYH</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">15.87</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-2.34</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-2.38</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>002-4445235-2194614</AmazonOrderID>
+<MerchantOrderID>002-4445235-2194614</MerchantOrderID>
+<ShipmentID>DXty6pcSH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-05T22:47:45+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>48394559036634</AmazonOrderItemCode>
+<SKU>TR-RNI7-0JYH</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">15.87</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-2.34</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-2.38</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>102-8660849-6453007</AmazonOrderID>
+<MerchantOrderID>102-8660849-6453007</MerchantOrderID>
+<ShipmentID>Dl17DxwXH</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-05T22:35:49+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>51341209208658</AmazonOrderItemCode>
+<SKU>JE-TZIX-TPB6</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">49.99</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">2.92</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-3.12</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-7.50</Amount>
+</Fee>
+</ItemFees>
+<Promotion>
+<MerchantPromotionID>US Core Free Shipping</MerchantPromotionID>
+<Type>Shipping</Type>
+<Amount currency="USD">-2.92</Amount>
+</Promotion>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>113-8676915-0090627</AmazonOrderID>
+<MerchantOrderID>113-8676915-0090627</MerchantOrderID>
+<ShipmentID>DsDFzDvgb</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-05T22:31:00+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>41434666146818</AmazonOrderItemCode>
+<SKU>2A-5RO7-1MFU</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">48.51</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.06</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-3.12</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-7.28</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Refund>
+<AmazonOrderID>113-9245363-0222668</AmazonOrderID>
+<MerchantOrderID>113-9245363-0222668</MerchantOrderID>
+<AdjustmentID>amzn1:crow:bFq499M+R5yr2/Tn1nl7dA</AdjustmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T00:46:56+00:00</PostedDate>
+<AdjustedItem>
+<AmazonOrderItemCode>65765898381258</AmazonOrderItemCode>
+<MerchantAdjustmentItemID>544238903605</MerchantAdjustmentItemID>
+<SKU>TR-RNI7-0JYH</SKU>
+<ItemPriceAdjustments>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">-15.87</Amount>
+</Component>
+</ItemPriceAdjustments>
+<ItemFeeAdjustments>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">2.38</Amount>
+</Fee>
+<Fee>
+<Type>RefundCommission</Type>
+<Amount currency="USD">-0.48</Amount>
+</Fee>
+</ItemFeeAdjustments>
+</AdjustedItem>
+</Fulfillment>
+</Refund>
+<Refund>
+<AmazonOrderID>111-2563523-2234635</AmazonOrderID>
+<MerchantOrderID>111-2563523-2234635</MerchantOrderID>
+<AdjustmentID>amzn1:crow:fIEQlTW7SuePrMs8OgFk/Q</AdjustmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2016-08-06T07:38:00+00:00</PostedDate>
+<AdjustedItem>
+<AmazonOrderItemCode>28671725518970</AmazonOrderItemCode>
+<MerchantAdjustmentItemID>545536054605</MerchantAdjustmentItemID>
+<SKU>TR-RNI7-0JYH</SKU>
+<ItemPriceAdjustments>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">-15.87</Amount>
+</Component>
+</ItemPriceAdjustments>
+<ItemFeeAdjustments>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">2.38</Amount>
+</Fee>
+<Fee>
+<Type>RefundCommission</Type>
+<Amount currency="USD">-0.48</Amount>
+</Fee>
+</ItemFeeAdjustments>
+</AdjustedItem>
+</Fulfillment>
+</Refund>
+<OtherTransaction>
+<TransactionType>Previous Reserve Amount Balance</TransactionType>
+<TransactionID>6152239981_CREDIT</TransactionID>
+<PostedDate>2016-08-05T22:21:38+00:00</PostedDate>
+<Amount currency="USD">16114.15</Amount>
+</OtherTransaction>
+</SettlementReport></Message></AmazonEnvelope>

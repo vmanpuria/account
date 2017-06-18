@@ -9,12 +9,13 @@
 #include <iostream>
 #include <sys/types.h>
 #include <dirent.h>
+#include <boost/version.hpp>
 
 #include "settlement_report.h"
 #include "cost.h"
 
 //#undef DEBUG
-//#define DEBUG
+#define DEBUG
 
 bool SettlementReport::addItemFromOrder(string &sku, int qty, float itemPrice, float itemTax, float itemFees, float itemPromotion)
 {
@@ -1118,7 +1119,7 @@ bool SettlementReport::parse()
 {
     bool result;
 
-    result = cost.parseCost();
+    result = cost.parseCostReport();
     if (!result)
     {
         fprintf(stderr, "failed to parse cost.\n");
@@ -1344,17 +1345,18 @@ bool SettlementReport::parseSettlementReport(xmlNodePtr settlementReport)
 int main(int argc, char **argv)
 {
     bool result;
-    string file, ext = ".txt", xmlDir = "xmlData";
+    string file, ext = ".txt", xmlDir = "xmlData", year="2016";
     string settlementFile, costFile;
     struct dirent *entry;
-    DIR *dir = opendir("./xmlData");
+    DIR *dir;
     size_t extLen, fileLen;
     
     int count = 0;
 
+    dir = opendir((xmlDir + '/' + year).c_str());
     if (dir == NULL)
     {
-        fprintf(stderr, "failed to open directory ./xmlData.\n");
+        fprintf(stderr, "failed to open directory [%s]\n", xmlDir.c_str());
         return 3;
     }
 
@@ -1365,37 +1367,85 @@ int main(int argc, char **argv)
     while ((entry = readdir(dir)) != NULL)
     {
         file = entry->d_name;
+
+        if (!file.compare(".") || !file.compare(".."))
+        {
+            continue;
+        }
+
         fileLen = file.length();
 
         if (fileLen <= extLen)
         {
-            continue;
+            fprintf(stderr, "invalid file [%s]. file name is shorter than extension [%s]. %zu <= %zu\n", file.c_str(), ext.c_str(), fileLen, extLen);
+            closedir(dir);
+            return 5;
         }
 
         if (file.compare(fileLen - extLen, string::npos, ext))
         {
-            continue;
+            fprintf(stderr, "invalid extension in file: [%s]. expected extension [%s].\n", file.c_str(), ext.c_str());
+            closedir(dir);
+            return 6;
         }
 
-        settlementFile = "./xmlData/5395199049017327.txt";
-        //settlementFile = "./xmlData/5251691949017313.txt";
-        //settlementFile = "./xmlData/5111340848017299.txt";
-        //settlementFile = "./xmlData/4967589632017285.txt";
-        //settlementFile = "./xmlData/4827028021017271.txt";
-        //settlementFile = "./xmlData/4690852492017257.txt";
-        //settlementFile = "./xmlData/4552318323017243.txt";
-#if 0
         settlementFile = xmlDir;
         settlementFile.push_back('/');
-        settlementFile.append(file);
+        settlementFile.append(year);
+        settlementFile.push_back('/');
+#if 1
+        // 2017
+        //file = "5395199049017327.txt";
+        //file = "5251691949017313.txt";
+        //file = "5111340848017299.txt";
+        //file = "4967589632017285.txt";
+        //file = "4827028021017271.txt";
+        //file = "4690852492017257.txt";
+        //file = "4552318323017243.txt";
+        //file = "5446451252017332.txt";
+        //file = "5447669528017332.txt";
+        //file = "5451550576017332.txt";
+        //file = "5448586679017332.txt";
+        //file = "5449381762017332.txt";
+
+        // 2016
+        //file = "5443749205017332.txt";
+        //file = "5444703250017332.txt";
+        //file = "5444803643017332.txt";
+        //file = "5445640987017332.txt";
+        //file = "5445663375017332.txt";
+        //file = "5445853021017332.txt";
+        //file = "5446245398017332.txt";
+        //file = "5446538233017332.txt";
+        //file = "5446706517017332.txt";
+        //file = "5447030431017332.txt";
+        //file = "5447114658017332.txt";
+        //file = "5447132255017332.txt";
+        //file = "5447248333017332.txt";
+        //file = "5447254468017332.txt";
+        //file = "5447313015017332.txt";
+        file = "5447378612017332.txt";
+        //file = "5448182219017332.txt";
+        //file = "5448284411017332.txt";
+        //file = "5448491286017332.txt";
+        //file = "5448584445017332.txt";
+        //file = "5448729676017332.txt";
+        //file = "5448893214017332.txt";
+        //file = "5449116203017332.txt";
+        //file = "5449587330017332.txt";
+        //file = "5450274724017332.txt";
+        //file = "5450883419017332.txt";
+        //file = "5452808768017332.txt";
 #endif
 
+        settlementFile.append(file);
         cout << "File: " << settlementFile << endl;
         SettlementReport report(settlementFile, costFile);
         printf("\n");
 #if 0
         if (argc <= 1) {
             printf("Usage: %s docname\n", argv[0]);
+            closedir(dir);
             return(0);
         }
         docname = argv[1];
@@ -1405,6 +1455,7 @@ int main(int argc, char **argv)
         if (!result)
         {
             fprintf(stderr, "failed to parse Amazon envelope.\n");
+            closedir(dir);
             return 2;
         }
 #ifdef DEBUG
@@ -1414,10 +1465,20 @@ int main(int argc, char **argv)
         report.dumpSummary();
 
         count++;
-        if (count >= 1) break;
+        break;
+        entry = readdir(dir);
     }
 
+    if (!count)
+    {
+        fprintf(stderr, "no files in directory %s\n", xmlDir.c_str());
+        closedir(dir);
+        return 4;
+    }
+ 
     closedir(dir);
+
+    printf("Parsed %d files.\n", count);
     printf("\n");
     return 0;
 }

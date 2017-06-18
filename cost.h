@@ -13,7 +13,7 @@ class Cost: public XmlDoc
     public:
         Cost(string xmlFile);
         ~Cost();
-        bool parseCost();
+        bool parseCostReport();
         void dumpCost();
 
         bool getCost(string &sku, float &cost);

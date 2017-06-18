@@ -120,7 +120,7 @@ bool Cost::parseProduct(xmlNodePtr product)
     return true;
 }
 
-bool Cost::parseCost()
+bool Cost::parseCostReport()
 {
     bool result;
     bool flag = false;
@@ -132,10 +132,10 @@ bool Cost::parseCost()
         return false;
     }
 
-    // Cost
-    if (xmlStrcmp(cur->name, (const xmlChar *)"Cost"))
+    // CostReport
+    if (xmlStrcmp(cur->name, (const xmlChar *)"CostReport"))
     {
-        fprintf(stderr,"document of the wrong type, root node != Cost\n");
+        fprintf(stderr,"document of the wrong type, root node != CostReport\n");
         return false;
     }
 
