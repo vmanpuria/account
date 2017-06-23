@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmazonEnvelope xmlns:java="http://xml.apache.org/xalan/java" xmlns:amzn="http://www.amazon.com/XSL/Transform/Extensions" xmlns:xalan="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"><Header><DocumentVersion>'4.01'</DocumentVersion><MerchantIdentifier>'18210289205'</MerchantIdentifier></Header><MessageType>SettlementReport</MessageType><Message><MessageID>1</MessageID><SettlementReport>
+<SettlementData>
+<AmazonSettlementID>5931859441</AmazonSettlementID>
+<TotalAmount currency="USD">10.86</TotalAmount>
+<StartDate>2015-06-25T20:39:28+00:00</StartDate>
+<EndDate>2015-07-09T20:38:17+00:00</EndDate>
+<DepositDate>2015-07-11T20:38:17+00:00</DepositDate>
+</SettlementData>
+<Order>
+<AmazonOrderID>114-1173770-9433037</AmazonOrderID>
+<MerchantOrderID>114-1173770-9433037</MerchantOrderID>
+<ShipmentID>DyGZgNWvk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-06-27T07:21:43+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>23396992966666</AmazonOrderItemCode>
+<SKU>IQ-BQS3-02R7</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">9.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-0.63</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-1.50</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>102-7613860-6567407</AmazonOrderID>
+<ShipmentID>DS1fydwWN</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-07-08T18:40:44+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>28040444001714</AmazonOrderItemCode>
+<SKU>32-JDXY-E75Y</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.45</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-1004695-1461047</AmazonOrderID>
+<MerchantOrderID>110-1004695-1461047</MerchantOrderID>
+<ShipmentID>DZTvbrbgb</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-08T09:32:01+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>52007113288746</AmazonOrderItemCode>
+<SKU>IQ-BQS3-02R7</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">9.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-0.63</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-1.50</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>106-3895041-1605819</AmazonOrderID>
+<MerchantOrderID>106-3895041-1605819</MerchantOrderID>
+<ShipmentID>DrBJtmZbb</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-03T22:16:27+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>29103163346570</AmazonOrderItemCode>
+<SKU>IQ-BQS3-02R7</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">9.99</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">0.77</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-0.63</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-1.50</Amount>
+</Fee>
+</ItemFees>
+<Promotion>
+<MerchantPromotionID>Amazon Core Free Shipping</MerchantPromotionID>
+<Type>Shipping</Type>
+<Amount currency="USD">-0.77</Amount>
+</Promotion>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>113-0050579-2209028</AmazonOrderID>
+<MerchantOrderID>113-0050579-2209028</MerchantOrderID>
+<ShipmentID>DLLG7nZYb</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-01T09:18:30+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>17200647208082</AmazonOrderItemCode>
+<SKU>IQ-BQS3-02R7</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">9.99</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">1.82</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-0.63</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-1.50</Amount>
+</Fee>
+</ItemFees>
+<Promotion>
+<MerchantPromotionID>Amazon Core Free Shipping</MerchantPromotionID>
+<Type>Shipping</Type>
+<Amount currency="USD">-1.82</Amount>
+</Promotion>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>113-5108336-3923423</AmazonOrderID>
+<ShipmentID>DPwMhqWgN</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-07-01T17:33:43+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>39625985930842</AmazonOrderItemCode>
+<SKU>32-JDXY-E75Y</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.45</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<OtherTransaction>
+<TransactionType>Payable to Amazon</TransactionType>
+<PostedDate>2015-06-25T20:39:28+00:00</PostedDate>
+<Amount currency="USD">-5.59</Amount>
+</OtherTransaction> 
+<OtherTransaction>
+<TransactionType>Subscription Fee</TransactionType>
+<TransactionID>ContSubscription_18210289205_1_20150705_SILVER</TransactionID>
+<PostedDate>2015-07-05T19:17:46+00:00</PostedDate>
+<Amount currency="USD">-39.99</Amount>
+</OtherTransaction>
+<OtherTransaction>
+<AmazonOrderID>113-5108336-3923423</AmazonOrderID>
+<TransactionType>ShippingServices</TransactionType>
+<TransactionID>11351083363923423-6316514814-1-10133749102</TransactionID>
+<PostedDate>2015-07-01T17:34:24+00:00</PostedDate>
+<Amount currency="USD">-2.96</Amount>
+</OtherTransaction>
+<OtherTransaction>
+<AmazonOrderID>102-7613860-6567407</AmazonOrderID>
+<TransactionType>ShippingServices</TransactionType>
+<TransactionID>10276138606567407-6333764807-1-10181065702</TransactionID>
+<PostedDate>2015-07-08T18:41:24+00:00</PostedDate>
+<Amount currency="USD">-2.96</Amount>
+</OtherTransaction>
+</SettlementReport></Message></AmazonEnvelope>

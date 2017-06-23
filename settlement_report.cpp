@@ -14,8 +14,8 @@
 #include "settlement_report.h"
 #include "cost.h"
 
-//#undef DEBUG
-#define DEBUG
+#undef DEBUG
+//#define DEBUG
 
 bool SettlementReport::addItemFromOrder(string &sku, int qty, float itemPrice, float itemTax, float itemFees, float itemPromotion)
 {
@@ -865,12 +865,13 @@ bool SettlementReport::findAndParseItemFees(xmlNodePtr item, float &itemFees)
     }
 
     //ItemFees
-    cur =  findNodeInChildren(item, (const xmlChar *)"ItemFees");
+    cur =  findNodeInChildren(item, (const xmlChar *)"ItemFees", true);
 
     if (!cur)
     {
-        fprintf(stderr,"failed to find node [ItemFees] in item.\n");
-        return false;
+        //ItemFees is optional.
+        itemFees = 0.0;
+        return true;
     }
 
     result = findAndParseFeeArray(cur, itemFees);
@@ -1004,7 +1005,7 @@ bool SettlementReport::parseItemArray(xmlNodePtr item)
 
         if (!result)
         {
-            fprintf(stderr,"failed to find and parse item fees in item.\n");
+            fprintf(stderr,"failed to find and parse item fees in item. sku: %s\n", sku.c_str());
             return false;
         }
 
@@ -1098,11 +1099,14 @@ void SettlementReport::dumpItemsFromRefunds()
     cout << endl;
 }
 
-void SettlementReport::dumpSummary()
+void SettlementReport::dumpSummary(float &summarySales, float &summaryTax, float &summaryProfit)
 {
     summary.dump();
+    summarySales = summary.getTotalSales();
+    summaryTax = summary.getTotalTax();
+    summaryProfit = summary.getTotalProfit();
 }
- 
+
 SettlementReport::SettlementReport(string docName, string costFile) : XmlDoc(docName),
     cost(costFile),
     orderSkuMap(),
@@ -1345,13 +1349,25 @@ bool SettlementReport::parseSettlementReport(xmlNodePtr settlementReport)
 int main(int argc, char **argv)
 {
     bool result;
-    string file, ext = ".txt", xmlDir = "xmlData", year="2016";
+    string file, ext = ".txt", xmlDir = "xmlData", year="2017";
     string settlementFile, costFile;
     struct dirent *entry;
     DIR *dir;
     size_t extLen, fileLen;
+    float ytdSales = 0.0, ytdTax = 0.0, ytdProfit = 0.0;
+    float summarySales, summaryTax, summaryProfit;
     
     int count = 0;
+
+    if (argc > 1)
+    {
+        year = argv[1];
+        if (year.compare("2015") || year.compare("2016") || year.compare("2017"))
+        {
+            fprintf(stderr, "invalid year [%s]. Enter 2015, 2016 or 2017\n", xmlDir.c_str());
+            return 1;
+        }
+    }
 
     dir = opendir((xmlDir + '/' + year).c_str());
     if (dir == NULL)
@@ -1363,10 +1379,12 @@ int main(int argc, char **argv)
     costFile = xmlDir;
     costFile.append("/cost.xml");
 
+    printf("Year: %s\n", year.c_str());
     extLen = ext.length();
     while ((entry = readdir(dir)) != NULL)
     {
         file = entry->d_name;
+        cout << "filename: " << file << endl;
 
         if (!file.compare(".") || !file.compare(".."))
         {
@@ -1424,7 +1442,7 @@ int main(int argc, char **argv)
         //file = "5447248333017332.txt";
         //file = "5447254468017332.txt";
         //file = "5447313015017332.txt";
-        file = "5447378612017332.txt";
+        //file = "5447378612017332.txt";
         //file = "5448182219017332.txt";
         //file = "5448284411017332.txt";
         //file = "5448491286017332.txt";
@@ -1436,6 +1454,24 @@ int main(int argc, char **argv)
         //file = "5450274724017332.txt";
         //file = "5450883419017332.txt";
         //file = "5452808768017332.txt";
+
+        // 2015
+		//file = "5443798738017332.txt";
+		//file = "5444980647017332.txt";
+		//file = "5445050108017332.txt";
+		//file = "5445813868017332.txt";
+		//file = "5445841061017332.txt";
+		//file = "5446553936017332.txt";
+		//file = "5447472371017332.txt";
+		//file = "5447585427017332.txt";
+		//file = "5447630798017332.txt";
+		//file = "5447785759017332.txt";
+		//file = "5448163727017332.txt";
+		//file = "5448303716017332.txt";
+		//file = "5448343359017332.txt";
+		//file = "5449306401017332.txt";
+		//file = "5450111231017332.txt";
+		//file = "5451848932017332.txt";
 #endif
 
         settlementFile.append(file);
@@ -1462,11 +1498,11 @@ int main(int argc, char **argv)
         report.dumpItemsFromOrders();
         report.dumpItemsFromRefunds();
 #endif
-        report.dumpSummary();
-
+        report.dumpSummary(summarySales, summaryTax, summaryProfit);
+        ytdSales += summarySales;
+        ytdTax += summaryTax;
+        ytdProfit += summaryProfit;
         count++;
-        break;
-        entry = readdir(dir);
     }
 
     if (!count)
@@ -1479,6 +1515,10 @@ int main(int argc, char **argv)
     closedir(dir);
 
     printf("Parsed %d files.\n", count);
+    cout << endl;
+    cout << "YTD Sales [" << year << "]:  " << ytdSales << endl;
+    cout << "YTD Tax Collected [" << year << "]:  " << ytdTax << endl;
+    cout << "YTD Profit [" << year << "]:  " << ytdProfit << endl;
     printf("\n");
     return 0;
 }

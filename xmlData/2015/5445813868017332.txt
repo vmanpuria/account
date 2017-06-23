@@ -1,0 +1,3195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmazonEnvelope xmlns:java="http://xml.apache.org/xalan/java" xmlns:amzn="http://www.amazon.com/XSL/Transform/Extensions" xmlns:xalan="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"><Header><DocumentVersion>'4.01'</DocumentVersion><MerchantIdentifier>'18210289205'</MerchantIdentifier></Header><MessageType>SettlementReport</MessageType><Message><MessageID>1</MessageID><SettlementReport>
+<SettlementData>
+<AmazonSettlementID>5946445441</AmazonSettlementID>
+<TotalAmount currency="USD">1135.81</TotalAmount>
+<StartDate>2015-07-23T20:40:19+00:00</StartDate>
+<EndDate>2015-08-06T20:37:53+00:00</EndDate>
+<DepositDate>2015-08-08T20:37:53+00:00</DepositDate>
+</SettlementData>
+<Order>
+<AmazonOrderID>112-4977844-1045021</AmazonOrderID>
+<MerchantOrderID>112-4977844-1045021</MerchantOrderID>
+<ShipmentID>Dr9glttsb</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-23T22:20:52+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>61967645556410</AmazonOrderItemCode>
+<SKU>IQ-BQS3-02R7</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">9.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-0.63</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-1.50</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>111-1340631-0714624</AmazonOrderID>
+<MerchantOrderID>111-1340631-0714624</MerchantOrderID>
+<ShipmentID>DyRRJMcBk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-06T20:30:59+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>07877119376082</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>106-8113586-7692250</AmazonOrderID>
+<MerchantOrderID>106-8113586-7692250</MerchantOrderID>
+<ShipmentID>Dh0tmYdxb</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-06T06:58:07+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>34554058337986</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>113-4695105-4831422</AmazonOrderID>
+<MerchantOrderID>113-4695105-4831422</MerchantOrderID>
+<ShipmentID>DGw6tVVnk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-06T06:18:20+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>45704132583330</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>112-1142889-2000265</AmazonOrderID>
+<MerchantOrderID>112-1142889-2000265</MerchantOrderID>
+<ShipmentID>DQ2X7mSjk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-06T05:46:28+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>16810323712370</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>105-0015602-8345813</AmazonOrderID>
+<MerchantOrderID>105-0015602-8345813</MerchantOrderID>
+<ShipmentID>Dk9Llmdhb</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-06T04:14:00+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>14886214511954</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>108-2921833-3047469</AmazonOrderID>
+<MerchantOrderID>108-2921833-3047469</MerchantOrderID>
+<ShipmentID>DChpsFV5k</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-05T20:23:19+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>34149985339698</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>2</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">44.00</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">9.84</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-2.08</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-3.96</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-6.60</Amount>
+</Fee>
+<Fee>
+<Type>ShippingChargeback</Type>
+<Amount currency="USD">-9.84</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>115-7700962-8168251</AmazonOrderID>
+<MerchantOrderID>115-7700962-8168251</MerchantOrderID>
+<ShipmentID>Dws61rVpk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-05T20:17:33+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>26922990240722</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>108-4356306-7183451</AmazonOrderID>
+<MerchantOrderID>108-4356306-7183451</MerchantOrderID>
+<ShipmentID>D3QQLsV3k</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-05T16:11:11+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>43814852104922</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>111-0171504-7478648</AmazonOrderID>
+<MerchantOrderID>111-0171504-7478648</MerchantOrderID>
+<ShipmentID>DG091sVXk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-05T15:35:27+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>01779643542490</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>109-6366923-3864233</AmazonOrderID>
+<MerchantOrderID>109-6366923-3864233</MerchantOrderID>
+<ShipmentID>Dc8MsKVMk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-05T09:00:30+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>36623966571354</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-7168998-5587443</AmazonOrderID>
+<MerchantOrderID>110-7168998-5587443</MerchantOrderID>
+<ShipmentID>DN72sqVmk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-05T08:48:39+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>52507110162554</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-0353443-3970646</AmazonOrderID>
+<MerchantOrderID>110-0353443-3970646</MerchantOrderID>
+<ShipmentID>DLgGBYSqk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-05T08:16:37+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>57494390333354</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-5961947-8797847</AmazonOrderID>
+<MerchantOrderID>110-5961947-8797847</MerchantOrderID>
+<ShipmentID>D10lrcVJk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-05T06:17:09+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>41105638558010</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>104-7984002-6150622</AmazonOrderID>
+<MerchantOrderID>104-7984002-6150622</MerchantOrderID>
+<ShipmentID>DVwqyWVsk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-05T06:05:10+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>22503322233850</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>104-8443916-8885815</AmazonOrderID>
+<ShipmentID>DWhZZk2zN</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-08-05T01:11:50+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>27590101048050</AmazonOrderItemCode>
+<SKU>0S-E3N8-V8CQ</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">350.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-28.00</Amount>
+</Fee>
+<Fee>
+<Type>VariableClosingFee</Type>
+<Amount currency="USD">-1.35</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>116-0772279-1485807</AmazonOrderID>
+<MerchantOrderID>116-0772279-1485807</MerchantOrderID>
+<ShipmentID>DLFFDSSKk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-04T20:03:02+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>67760958403338</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>102-7853237-6293829</AmazonOrderID>
+<MerchantOrderID>102-7853237-6293829</MerchantOrderID>
+<ShipmentID>Dpg5Y3S8k</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-04T19:32:22+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>64932753632602</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>112-1132832-7633853</AmazonOrderID>
+<MerchantOrderID>112-1132832-7633853</MerchantOrderID>
+<ShipmentID>D5Zqy8Spk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-04T19:24:34+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>57489509930690</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>104-1961413-7630625</AmazonOrderID>
+<MerchantOrderID>104-1961413-7630625</MerchantOrderID>
+<ShipmentID>DjSXCPVHb</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-04T09:32:41+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>15155951576402</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">8.16</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+<Fee>
+<Type>ShippingChargeback</Type>
+<Amount currency="USD">-8.16</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-8072157-1204266</AmazonOrderID>
+<MerchantOrderID>110-8072157-1204266</MerchantOrderID>
+<ShipmentID>DrNcCvVsb</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-04T09:27:34+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>09599834271346</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>105-1936696-6865856</AmazonOrderID>
+<MerchantOrderID>105-1936696-6865856</MerchantOrderID>
+<ShipmentID>D9rtw2cdk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-04T01:15:21+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>23378811205370</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>107-2741871-3875401</AmazonOrderID>
+<MerchantOrderID>107-2741871-3875401</MerchantOrderID>
+<ShipmentID>D2Gh4DSTk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-04T01:06:12+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>10640983734122</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">4.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+<Fee>
+<Type>ShippingChargeback</Type>
+<Amount currency="USD">-4.99</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-3242858-8650608</AmazonOrderID>
+<MerchantOrderID>110-3242858-8650608</MerchantOrderID>
+<ShipmentID>Dc83dLtwk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-03T08:52:11+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>10403264177458</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">3.93</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+<Promotion>
+<MerchantPromotionID>Amazon Core Free Shipping</MerchantPromotionID>
+<Type>Shipping</Type>
+<Amount currency="USD">-3.93</Amount>
+</Promotion>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>106-2539396-6882621</AmazonOrderID>
+<ShipmentID>DPdkXXwDN</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-08-01T23:43:34+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>13217349868098</AmazonOrderItemCode>
+<SKU>32-JDXY-E75Y</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.45</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>102-6096610-6340233</AmazonOrderID>
+<ShipmentID>DmSQXQwZN</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-08-01T22:51:39+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>18002368698594</AmazonOrderItemCode>
+<SKU>FY-0A6A-R27Y</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">34.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-5.25</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>115-1631061-4892217</AmazonOrderID>
+<MerchantOrderID>115-1631061-4892217</MerchantOrderID>
+<ShipmentID>DG7vxntDk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-01T21:40:41+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>48826743315794</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>104-5997550-3036225</AmazonOrderID>
+<MerchantOrderID>104-5997550-3036225</MerchantOrderID>
+<ShipmentID>DPqzpzH5k</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-01T02:45:34+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>25219031392706</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-7832320-1561033</AmazonOrderID>
+<MerchantOrderID>110-7832320-1561033</MerchantOrderID>
+<ShipmentID>DFCm1XV4b</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-01T02:21:05+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>30508896474314</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">5.34</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+<Fee>
+<Type>ShippingChargeback</Type>
+<Amount currency="USD">-5.34</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>111-2804462-7776233</AmazonOrderID>
+<MerchantOrderID>111-2804462-7776233</MerchantOrderID>
+<ShipmentID>DKRVYCVJb</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-08-01T02:15:24+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>01889681844578</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">3.45</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+<Promotion>
+<MerchantPromotionID>Amazon Core Free Shipping</MerchantPromotionID>
+<Type>Shipping</Type>
+<Amount currency="USD">-3.45</Amount>
+</Promotion>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>102-9391997-7125039</AmazonOrderID>
+<ShipmentID>DHlPpTPrN</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-07-31T15:52:19+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>48794537823074</AmazonOrderItemCode>
+<SKU>FY-0A6A-R27Y</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">29.98</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-4.50</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>113-4354899-3605032</AmazonOrderID>
+<MerchantOrderID>113-4354899-3605032</MerchantOrderID>
+<ShipmentID>D9gy0mHhk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-31T02:23:42+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>27428762999738</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>114-1228276-8426656</AmazonOrderID>
+<MerchantOrderID>114-1228276-8426656</MerchantOrderID>
+<ShipmentID>DXvQcWtSk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-30T22:40:06+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>00308825584730</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>102-0076318-7280279</AmazonOrderID>
+<MerchantOrderID>102-0076318-7280279</MerchantOrderID>
+<ShipmentID>D2t1zY5Vk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-30T19:36:46+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>01550310194642</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>002-3978866-6701029</AmazonOrderID>
+<MerchantOrderID>002-3978866-6701029</MerchantOrderID>
+<ShipmentID>DbGw2ZMqk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-30T06:24:58+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>59403317957234</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>002-5155533-8794609</AmazonOrderID>
+<MerchantOrderID>002-5155533-8794609</MerchantOrderID>
+<ShipmentID>DycVM5H4k</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-29T21:28:19+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>22859447337466</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-13.20</Amount>
+</Fee>
+</ItemFees>
+</Item>
+<Item>
+<AmazonOrderItemCode>22859447337466</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+</ItemFees>
+</Item>
+<Item>
+<AmazonOrderItemCode>22859447337466</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+</ItemFees>
+</Item>
+<Item>
+<AmazonOrderItemCode>22859447337466</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>105-3394109-1491430</AmazonOrderID>
+<MerchantOrderID>105-3394109-1491430</MerchantOrderID>
+<ShipmentID>DzlWMwHvk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-29T10:20:17+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>30625686798122</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>107-9723411-1787429</AmazonOrderID>
+<MerchantOrderID>107-9723411-1787429</MerchantOrderID>
+<ShipmentID>Dns9gnbsk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-29T09:44:53+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>52154034351626</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>115-0631633-2778642</AmazonOrderID>
+<MerchantOrderID>115-0631633-2778642</MerchantOrderID>
+<ShipmentID>DMSJMlHbk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-29T05:51:37+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>17676972600794</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>111-5338976-5919440</AmazonOrderID>
+<MerchantOrderID>111-5338976-5919440</MerchantOrderID>
+<ShipmentID>DdZBb8Mwk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-29T00:34:06+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>36753106614082</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>116-5422147-0213049</AmazonOrderID>
+<MerchantOrderID>116-5422147-0213049</MerchantOrderID>
+<ShipmentID>D3gY8sbhk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-29T00:29:22+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>33587469537314</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-3249963-3177008</AmazonOrderID>
+<MerchantOrderID>110-3249963-3177008</MerchantOrderID>
+<ShipmentID>DGl9qrb9k</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T22:24:52+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>35988665680314</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-5696518-5337068</AmazonOrderID>
+<MerchantOrderID>110-5696518-5337068</MerchantOrderID>
+<ShipmentID>DdWc1fHqk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T21:28:00+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>35321241746682</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>105-5614666-4818653</AmazonOrderID>
+<MerchantOrderID>105-5614666-4818653</MerchantOrderID>
+<ShipmentID>DyQP1YHDk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T21:26:51+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>12284846058994</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>109-8825643-3312222</AmazonOrderID>
+<MerchantOrderID>109-8825643-3312222</MerchantOrderID>
+<ShipmentID>D050rCHgk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T19:42:23+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>14085610201898</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>115-1219105-9169816</AmazonOrderID>
+<MerchantOrderID>115-1219105-9169816</MerchantOrderID>
+<ShipmentID>DdS1kQMqk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T19:12:59+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>28447913121954</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>114-8503727-3547409</AmazonOrderID>
+<MerchantOrderID>114-8503727-3547409</MerchantOrderID>
+<ShipmentID>Dly4k6M6k</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T18:42:38+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>26755091099794</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>108-3461082-3658628</AmazonOrderID>
+<MerchantOrderID>108-3461082-3658628</MerchantOrderID>
+<ShipmentID>DzynkqMBk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T16:37:24+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>02348100533034</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-1737063-3570668</AmazonOrderID>
+<MerchantOrderID>110-1737063-3570668</MerchantOrderID>
+<ShipmentID>DRcVRWMZk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T15:52:30+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>69578802913050</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>109-2523078-5717802</AmazonOrderID>
+<MerchantOrderID>109-2523078-5717802</MerchantOrderID>
+<ShipmentID>Dd7jcCHhk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T07:51:01+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>55927610156258</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-5654265-4270644</AmazonOrderID>
+<MerchantOrderID>110-5654265-4270644</MerchantOrderID>
+<ShipmentID>Dm7zcDHBk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T07:50:53+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>11782124073618</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>002-7698392-6619435</AmazonOrderID>
+<ShipmentID>DWzvmcPHN</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T04:01:55+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>30405975324418</AmazonOrderItemCode>
+<SKU>EH-ETZM-KVT4</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">83.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-12.60</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>106-7254764-9854604</AmazonOrderID>
+<MerchantOrderID>106-7254764-9854604</MerchantOrderID>
+<ShipmentID>DzjrctHNk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-27T22:43:55+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>12447630630722</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>115-4627483-1972207</AmazonOrderID>
+<MerchantOrderID>115-4627483-1972207</MerchantOrderID>
+<ShipmentID>DbmGBLHGk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-27T19:45:23+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>18145499582122</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>108-9715046-3373002</AmazonOrderID>
+<MerchantOrderID>108-9715046-3373002</MerchantOrderID>
+<ShipmentID>DSh7d82lk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-27T16:46:14+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>26480324736018</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>116-6815283-9998625</AmazonOrderID>
+<MerchantOrderID>116-6815283-9998625</MerchantOrderID>
+<ShipmentID>DR99wbHDk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-27T15:52:21+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>57976704620578</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>116-3469339-7518621</AmazonOrderID>
+<MerchantOrderID>116-3469339-7518621</MerchantOrderID>
+<ShipmentID>Dbx0K32yk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-27T14:16:27+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>03517815891410</AmazonOrderItemCode>
+<SKU>IQ-BQS3-02R7</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">9.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-0.63</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-1.50</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>108-0112813-9387403</AmazonOrderID>
+<MerchantOrderID>108-0112813-9387403</MerchantOrderID>
+<ShipmentID>DRY8FQH9k</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-27T04:20:44+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>40315426163394</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>112-2792864-2786613</AmazonOrderID>
+<MerchantOrderID>112-2792864-2786613</MerchantOrderID>
+<ShipmentID>DNhStHblk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-27T03:06:46+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>47717195016682</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>107-3314039-0917008</AmazonOrderID>
+<MerchantOrderID>107-3314039-0917008</MerchantOrderID>
+<ShipmentID>Dy537sylk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-27T02:19:51+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>34268060344978</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>115-9483292-7675469</AmazonOrderID>
+<MerchantOrderID>115-9483292-7675469</MerchantOrderID>
+<ShipmentID>DNgpvlbgk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-27T01:16:13+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>33247826242346</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>114-6424045-6279421</AmazonOrderID>
+<MerchantOrderID>114-6424045-6279421</MerchantOrderID>
+<ShipmentID>Dzw04QHlk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-26T15:26:22+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>11416232265234</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">4.17</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+<Promotion>
+<MerchantPromotionID>Amazon Core Free Shipping</MerchantPromotionID>
+<Type>Shipping</Type>
+<Amount currency="USD">-4.17</Amount>
+</Promotion>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>108-2808850-8854657</AmazonOrderID>
+<MerchantOrderID>108-2808850-8854657</MerchantOrderID>
+<ShipmentID>DQvx98Nwk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-25T23:12:40+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>34931273463714</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">4.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+<Fee>
+<Type>ShippingChargeback</Type>
+<Amount currency="USD">-4.99</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>106-8163818-4351403</AmazonOrderID>
+<MerchantOrderID>106-8163818-4351403</MerchantOrderID>
+<ShipmentID>DjsSq3t3b</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-25T22:11:24+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>37652776812786</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>111-6564843-6297836</AmazonOrderID>
+<MerchantOrderID>111-6564843-6297836</MerchantOrderID>
+<ShipmentID>DyS9Lp2Mk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-25T21:56:21+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>30077932250882</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>107-5318047-0199406</AmazonOrderID>
+<ShipmentID>DbhzdPwlN</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-07-25T18:04:15+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>12616160320314</AmazonOrderItemCode>
+<SKU>LO-QT6Z-CDY2</SKU>
+<Quantity>2</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">99.98</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-15.00</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>108-0341288-7869008</AmazonOrderID>
+<ShipmentID>DBwRSpPkN</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-07-25T18:02:55+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>60519335995354</AmazonOrderItemCode>
+<SKU>LO-QT6Z-CDY2</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">49.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-7.50</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>103-4736136-6383468</AmazonOrderID>
+<MerchantOrderID>103-4736136-6383468</MerchantOrderID>
+<ShipmentID>Dd7cf8llk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-24T22:13:22+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>02378371082442</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>002-5473526-2162602</AmazonOrderID>
+<MerchantOrderID>002-5473526-2162602</MerchantOrderID>
+<ShipmentID>DP9zDwyTk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-24T20:12:56+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>60691247413226</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>115-7055644-9788209</AmazonOrderID>
+<MerchantOrderID>115-7055644-9788209</MerchantOrderID>
+<ShipmentID>D6nTwGbJk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-24T18:30:52+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>30174768055386</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-6.60</Amount>
+</Fee>
+</ItemFees>
+</Item>
+<Item>
+<AmazonOrderItemCode>30174768055386</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>110-4734632-9873858</AmazonOrderID>
+<MerchantOrderID>110-4734632-9873858</MerchantOrderID>
+<ShipmentID>Dt5pGCr0b</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-24T10:07:48+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>27891355480306</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">8.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+<Fee>
+<Type>ShippingChargeback</Type>
+<Amount currency="USD">-8.99</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>115-0307660-7032279</AmazonOrderID>
+<MerchantOrderID>115-0307660-7032279</MerchantOrderID>
+<ShipmentID>D6DNRSbkk</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>AFN</MerchantFulfillmentID>
+<PostedDate>2015-07-24T08:55:59+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>46231276638490</AmazonOrderItemCode>
+<SKU>3N-PQYC-NVO3</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">22.00</Amount>
+</Component>
+<Component>
+<Type>Shipping</Type>
+<Amount currency="USD">4.44</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>FBAPerOrderFulfillmentFee</Type>
+<Amount currency="USD">-1.00</Amount>
+</Fee>
+<Fee>
+<Type>FBAPerUnitFulfillmentFee</Type>
+<Amount currency="USD">-1.04</Amount>
+</Fee>
+<Fee>
+<Type>FBAWeightBasedFee</Type>
+<Amount currency="USD">-1.98</Amount>
+</Fee>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-3.30</Amount>
+</Fee>
+</ItemFees>
+<Promotion>
+<MerchantPromotionID>Amazon Core Free Shipping</MerchantPromotionID>
+<Type>Shipping</Type>
+<Amount currency="USD">-4.44</Amount>
+</Promotion>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>104-6032431-3274653</AmazonOrderID>
+<ShipmentID>DtbddG20N</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-07-24T07:54:15+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>43241437860522</AmazonOrderItemCode>
+<SKU>LO-QT6Z-CDY2</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">49.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-7.50</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Order>
+<AmazonOrderID>116-4359185-6484229</AmazonOrderID>
+<ShipmentID>D7ccdfPSN</ShipmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-07-24T07:52:42+00:00</PostedDate>
+<Item>
+<AmazonOrderItemCode>47598877367130</AmazonOrderItemCode>
+<SKU>LO-QT6Z-CDY2</SKU>
+<Quantity>1</Quantity>
+<ItemPrice>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">49.99</Amount>
+</Component>
+</ItemPrice>
+<ItemFees>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">-7.50</Amount>
+</Fee>
+</ItemFees>
+</Item>
+</Fulfillment>
+</Order>
+<Refund>
+<AmazonOrderID>112-6158149-0065860</AmazonOrderID>
+<AdjustmentID>amzn1:crow:ywk0ozufTKq/GDjrovnnMw</AdjustmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T06:04:55+00:00</PostedDate>
+<AdjustedItem>
+<AmazonOrderItemCode>70073595511386</AmazonOrderItemCode>
+<MerchantAdjustmentItemID>57670162875000</MerchantAdjustmentItemID>
+<SKU>LO-QT6Z-CDY2</SKU>
+<ItemPriceAdjustments>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">-99.98</Amount>
+</Component>
+</ItemPriceAdjustments>
+<ItemFeeAdjustments>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">15.00</Amount>
+</Fee>
+<Fee>
+<Type>RefundCommission</Type>
+<Amount currency="USD">-3.00</Amount>
+</Fee>
+</ItemFeeAdjustments>
+</AdjustedItem>
+</Fulfillment>
+</Refund>
+<Refund>
+<AmazonOrderID>107-5318047-0199406</AmazonOrderID>
+<AdjustmentID>amzn1:crow:gbm+gfMTRwCMNt99L3ScrA</AdjustmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T07:23:47+00:00</PostedDate>
+<AdjustedItem>
+<AmazonOrderItemCode>12616160320314</AmazonOrderItemCode>
+<MerchantAdjustmentItemID>56788129907000</MerchantAdjustmentItemID>
+<SKU>LO-QT6Z-CDY2</SKU>
+<ItemPriceAdjustments>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">-99.98</Amount>
+</Component>
+</ItemPriceAdjustments>
+<ItemFeeAdjustments>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">15.00</Amount>
+</Fee>
+<Fee>
+<Type>RefundCommission</Type>
+<Amount currency="USD">-3.00</Amount>
+</Fee>
+</ItemFeeAdjustments>
+</AdjustedItem>
+</Fulfillment>
+</Refund>
+<Refund>
+<AmazonOrderID>108-0341288-7869008</AmazonOrderID>
+<AdjustmentID>amzn1:crow:UweTHyYkQL+kkbGMx3WbrA</AdjustmentID>
+<MarketplaceName>Amazon.com</MarketplaceName>
+<Fulfillment>
+<MerchantFulfillmentID>MFN</MerchantFulfillmentID>
+<PostedDate>2015-07-28T06:24:45+00:00</PostedDate>
+<AdjustedItem>
+<AmazonOrderItemCode>60519335995354</AmazonOrderItemCode>
+<MerchantAdjustmentItemID>55711188992000</MerchantAdjustmentItemID>
+<SKU>LO-QT6Z-CDY2</SKU>
+<ItemPriceAdjustments>
+<Component>
+<Type>Principal</Type>
+<Amount currency="USD">-49.99</Amount>
+</Component>
+</ItemPriceAdjustments>
+<ItemFeeAdjustments>
+<Fee>
+<Type>Commission</Type>
+<Amount currency="USD">7.50</Amount>
+</Fee>
+<Fee>
+<Type>RefundCommission</Type>
+<Amount currency="USD">-1.50</Amount>
+</Fee>
+</ItemFeeAdjustments>
+</AdjustedItem>
+</Fulfillment>
+</Refund>
+<OtherTransaction>
+<TransactionType>Payable to Amazon</TransactionType>
+<PostedDate>2015-07-23T20:40:19+00:00</PostedDate>
+<Amount currency="USD">-46.57</Amount>
+</OtherTransaction> 
+<OtherTransaction>
+<TransactionType>Inbound Transportation Charge</TransactionType>
+<TransactionID>18210289205:FBA2TN8J5T</TransactionID>
+<PostedDate>2015-07-24T00:42:06+00:00</PostedDate>
+<Amount currency="USD">-119.87</Amount>
+<Fees>
+<Fee>
+<Type>Inbound Transportation Fee</Type>
+<Amount currency="USD">-119.87</Amount>
+</Fee>
+</Fees>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>Inbound Transportation Charge</TransactionType>
+<TransactionID>18210289205:FBA2W1ZGZ7</TransactionID>
+<PostedDate>2015-08-06T17:09:00+00:00</PostedDate>
+<Amount currency="USD">-24.46</Amount>
+<Fees>
+<Fee>
+<Type>Inbound Transportation Fee</Type>
+<Amount currency="USD">-24.46</Amount>
+</Fee>
+</Fees>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>Inbound Transportation Charge</TransactionType>
+<TransactionID>18210289205:FBA2TN8J55</TransactionID>
+<PostedDate>2015-08-05T22:43:16+00:00</PostedDate>
+<Amount currency="USD">-306.72</Amount>
+<Fees>
+<Fee>
+<Type>Inbound Transportation Fee</Type>
+<Amount currency="USD">-306.72</Amount>
+</Fee>
+</Fees>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>Inbound Transportation Charge</TransactionType>
+<TransactionID>18210289205:FBA2TN8J6S</TransactionID>
+<PostedDate>2015-08-05T22:41:43+00:00</PostedDate>
+<Amount currency="USD">-262.20</Amount>
+<Fees>
+<Fee>
+<Type>Inbound Transportation Fee</Type>
+<Amount currency="USD">-262.20</Amount>
+</Fee>
+</Fees>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>Subscription Fee</TransactionType>
+<TransactionID>ContSubscription_18210289205_1_20150805_SILVER</TransactionID>
+<PostedDate>2015-08-05T19:15:39+00:00</PostedDate>
+<Amount currency="USD">-39.99</Amount>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>Inbound Transportation Charge</TransactionType>
+<TransactionID>18210289205:FBA2VY6YLC</TransactionID>
+<PostedDate>2015-08-05T05:40:07+00:00</PostedDate>
+<Amount currency="USD">-24.46</Amount>
+<Fees>
+<Fee>
+<Type>Inbound Transportation Fee</Type>
+<Amount currency="USD">-24.46</Amount>
+</Fee>
+</Fees>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>WarehousePrep</TransactionType>
+<TransactionID>aa746758-302f-4ae8-a0dd-3731cc11b171</TransactionID>
+<PostedDate>2015-08-04T18:21:36+00:00</PostedDate>
+<Amount currency="USD">-3.20</Amount>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>Inbound Transportation Charge</TransactionType>
+<TransactionID>18210289205:FBA2VW843P</TransactionID>
+<PostedDate>2015-08-04T16:40:18+00:00</PostedDate>
+<Amount currency="USD">-5.07</Amount>
+<Fees>
+<Fee>
+<Type>Inbound Transportation Fee</Type>
+<Amount currency="USD">-5.07</Amount>
+</Fee>
+</Fees>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>Inbound Transportation Charge</TransactionType>
+<TransactionID>18210289205:FBA2VT2F76</TransactionID>
+<PostedDate>2015-08-03T00:00:20+00:00</PostedDate>
+<Amount currency="USD">-11.91</Amount>
+<Fees>
+<Fee>
+<Type>Inbound Transportation Fee</Type>
+<Amount currency="USD">-11.91</Amount>
+</Fee>
+</Fees>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>WarehousePrep</TransactionType>
+<TransactionID>04ffb0e3-635a-4baa-9ba7-497a72d289ff</TransactionID>
+<PostedDate>2015-08-02T10:05:49+00:00</PostedDate>
+<Amount currency="USD">-3.20</Amount>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>Inbound Transportation Charge</TransactionType>
+<TransactionID>18210289205:FBA2VHTQN1</TransactionID>
+<PostedDate>2015-07-30T07:26:18+00:00</PostedDate>
+<Amount currency="USD">-25.49</Amount>
+<Fees>
+<Fee>
+<Type>Inbound Transportation Fee</Type>
+<Amount currency="USD">-25.49</Amount>
+</Fee>
+</Fees>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>MISSING_FROM_INBOUND</TransactionType>
+<TransactionID>369404661</TransactionID>
+<PostedDate>2015-08-02T14:34:52+00:00</PostedDate>
+<Amount currency="USD">270.60</Amount>
+<OtherTransactionItem>
+<SKU>WE-9OG9-PTCR</SKU>
+<Quantity>22</Quantity>
+<Amount currency="USD">270.60</Amount>
+</OtherTransactionItem>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>MISSING_FROM_INBOUND</TransactionType>
+<TransactionID>370101831</TransactionID>
+<PostedDate>2015-08-03T18:49:51+00:00</PostedDate>
+<Amount currency="USD">220.56</Amount>
+<OtherTransactionItem>
+<SKU>DI-1B77-4SWT</SKU>
+<Quantity>24</Quantity>
+<Amount currency="USD">220.56</Amount>
+</OtherTransactionItem>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>Successful charge</TransactionType>
+<TransactionID>1520422LmJGvjBLTGu9A1o337rA/g</TransactionID>
+<PostedDate>2015-07-23T22:11:42+00:00</PostedDate>
+<Amount currency="USD">46.57</Amount>
+</OtherTransaction>
+<OtherTransaction>
+<AmazonOrderID>106-2539396-6882621</AmazonOrderID>
+<TransactionType>ShippingServices</TransactionType>
+<TransactionID>10625393966882621-6397586815-1-10352461802</TransactionID>
+<PostedDate>2015-08-01T23:44:15+00:00</PostedDate>
+<Amount currency="USD">-2.96</Amount>
+</OtherTransaction>
+</SettlementReport></Message></AmazonEnvelope>

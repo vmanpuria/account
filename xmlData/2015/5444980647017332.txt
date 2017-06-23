@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmazonEnvelope xmlns:java="http://xml.apache.org/xalan/java" xmlns:amzn="http://www.amazon.com/XSL/Transform/Extensions" xmlns:xalan="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"><Header><DocumentVersion>'4.01'</DocumentVersion><MerchantIdentifier>'18210289205'</MerchantIdentifier></Header><MessageType>SettlementReport</MessageType><Message><MessageID>1</MessageID><SettlementReport>
+<SettlementData>
+<AmazonSettlementID>5969616041</AmazonSettlementID>
+<TotalAmount currency="USD">312.78</TotalAmount>
+<StartDate>2015-09-03T21:59:44+00:00</StartDate>
+<EndDate>2015-09-04T21:59:38+00:00</EndDate>
+<DepositDate>2015-09-06T21:59:38+00:00</DepositDate>
+</SettlementData>
+<OtherTransaction>
+<TransactionType>Previous Reserve Amount Balance</TransactionType>
+<TransactionID>5969564741_CREDIT</TransactionID>
+<PostedDate>2015-09-03T22:19:50+00:00</PostedDate>
+<Amount currency="USD">311.51</Amount>
+</OtherTransaction>
+<OtherTransaction>
+<AmazonOrderID>103-5060116-4870601</AmazonOrderID>
+<TransactionType>REVERSAL_REIMBURSEMENT</TransactionType>
+<TransactionID>394018451</TransactionID>
+<PostedDate>2015-09-04T05:55:21+00:00</PostedDate>
+<Amount currency="USD">1.27</Amount>
+<OtherTransactionItem>
+<SKU>A9-SZC2-5QAM</SKU>
+<Quantity>1</Quantity>
+<Amount currency="USD">1.27</Amount>
+</OtherTransactionItem>
+</OtherTransaction>
+</SettlementReport></Message></AmazonEnvelope>

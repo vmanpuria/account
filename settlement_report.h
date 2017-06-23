@@ -50,9 +50,25 @@ class Summary
             cout << "Diff (Settlement - (Order + Refund + Other)): amount: " << diff << endl;
             cout << "Profit: from orders: " << (orderAmount + orderCostAmount) << endl;
             cout << "Profit: after refunds: " << (orderAmount + refundAmount + otherAmount + orderCostAmount) << endl;
-            cout << "Profit: after refunds: " << (totalAmount + orderCostAmount - (orderTaxAmount + refundTaxAmount) - otherInboundAmount) << endl;
+            cout << "Profit: after refunds: " << getTotalProfit() << endl;
+            cout << "Tax collected: " << (orderTaxAmount + refundTaxAmount) << endl;
 
             cout << endl;
+        }
+
+        float getTotalTax()
+        {
+            return orderTaxAmount + refundTaxAmount;
+        }
+
+        float getTotalSales()
+        {
+            return orderAmount - refundAmount;
+        }
+
+        float getTotalProfit()
+        {
+            return (totalAmount + orderCostAmount - (orderTaxAmount + refundTaxAmount) - otherInboundAmount);
         }
 };
 
@@ -151,6 +167,6 @@ class SettlementReport : public XmlDoc
         bool parse();
         void dumpItemsFromOrders();
         void dumpItemsFromRefunds();
-        void dumpSummary();
+        void dumpSummary(float &summarySales, float &summaryTax, float &summaryProfit);
 };
 #endif //__SETTLEMENT_REPORT_H__

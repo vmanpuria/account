@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmazonEnvelope xmlns:java="http://xml.apache.org/xalan/java" xmlns:amzn="http://www.amazon.com/XSL/Transform/Extensions" xmlns:xalan="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"><Header><DocumentVersion>'4.01'</DocumentVersion><MerchantIdentifier>'18210289205'</MerchantIdentifier></Header><MessageType>SettlementReport</MessageType><Message><MessageID>1</MessageID><SettlementReport>
+<SettlementData>
+<AmazonSettlementID>5921672971</AmazonSettlementID>
+<TotalAmount currency="USD">-5.59</TotalAmount>
+<StartDate>2015-06-04T20:36:37+00:00</StartDate>
+<EndDate>2015-06-25T20:39:28+00:00</EndDate>
+<DepositDate>2015-06-27T20:39:28+00:00</DepositDate>
+</SettlementData>
+<OtherTransaction>
+<TransactionType>Inbound Transportation Charge</TransactionType>
+<TransactionID>18210289205:FBA2QZ06HJ</TransactionID>
+<PostedDate>2015-06-13T04:01:00+00:00</PostedDate>
+<Amount currency="USD">-5.59</Amount>
+<Fees>
+<Fee>
+<Type>Inbound Transportation Fee</Type>
+<Amount currency="USD">-5.59</Amount>
+</Fee>
+</Fees>
+</OtherTransaction>
+</SettlementReport></Message></AmazonEnvelope>

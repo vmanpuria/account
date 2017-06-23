@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmazonEnvelope xmlns:java="http://xml.apache.org/xalan/java" xmlns:amzn="http://www.amazon.com/XSL/Transform/Extensions" xmlns:xalan="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"><Header><DocumentVersion>'4.01'</DocumentVersion><MerchantIdentifier>'18210289205'</MerchantIdentifier></Header><MessageType>SettlementReport</MessageType><Message><MessageID>1</MessageID><SettlementReport>
+<SettlementData>
+<AmazonSettlementID>5969564741</AmazonSettlementID>
+<TotalAmount currency="USD">0.00</TotalAmount>
+<StartDate>2015-09-03T20:39:40+00:00</StartDate>
+<EndDate>2015-09-03T21:59:44+00:00</EndDate>
+<DepositDate>2015-09-05T21:59:44+00:00</DepositDate>
+</SettlementData>
+<OtherTransaction>
+<TransactionType>Previous Reserve Amount Balance</TransactionType>
+<TransactionID>5961463271_CREDIT</TransactionID>
+<PostedDate>2015-09-03T21:00:25+00:00</PostedDate>
+<Amount currency="USD">311.51</Amount>
+</OtherTransaction>
+<OtherTransaction>
+<TransactionType>Current Reserve Amount</TransactionType>
+<TransactionID>5969564741_DEBIT</TransactionID>
+<PostedDate>2015-09-03T22:19:50+00:00</PostedDate>
+<Amount currency="USD">-311.51</Amount>
+</OtherTransaction>
+</SettlementReport></Message></AmazonEnvelope>
